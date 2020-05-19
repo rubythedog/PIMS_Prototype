@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View History</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css" />
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css" />
+    <script src="../../scripts/jquery-3.2.1.js"></script>
+    <script src="../../scripts/bootstrap.min.js"></script>
+    <script src="../../scripts/PIMS_Prototype.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage accordion">
+
+<div id="header"><h1 class="short">View (file) History</h1>
+    </div>
+<div id="content">
+    <div class="sectionbody">
+        <p>If you want to see what changes were made for a file, the best way (I&#39;ve found), is to use Visual Studio (not code) Team Explorer.</p>
+    </div></div>
+
+    <h2>Steps</h2>
+
+<div id="content">
+    <div class="sectionbody">
+        <div class="colist arabic">
+            <p><strong>Prerequisite</strong>: Install <a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=TeamExplorer&rel=16" >Microsoft Visual Studio Team Explorer</a></p>
+                <ol>
+                    <li>Launch Visual Studio 2017/2019.</li>
+                    <li>Click <em>File|Open|Folder...</em></li>
+                    <li>Select the 'root' folder of the local Git Repository.</li>
+                    <li>In <em>Solution Explorer</em>, find the file to view the history of</li>
+                    <li>Right click on the file, select <em>View History...</em></li>
+                </ol>
+            </div>
+    </div>
+    </div>
+
+</body>
+</html>

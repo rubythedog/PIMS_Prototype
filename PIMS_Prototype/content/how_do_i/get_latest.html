@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Get Latest</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css" />
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css" />
+    <script src="../../scripts/jquery-3.2.1.js"></script>
+    <script src="../../scripts/bootstrap.min.js"></script>
+    <script src="../../scripts/PIMS_Prototype.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage accordion">
+
+<div id="header"><h1 class="short">Get Latest (aka &#39;pull&#39;)</h1>
+    </div>
+<div id="content"><div class="sectionbody"><p>To get the latest code of a branch, you need to perform a &#39;pull&#39;.</p></div></div>
+
+    <h2>Steps</h2>
+
+    <div id="content">
+    <div class="sectionbody">
+        <table class="w3-table-all">
+            <thead>
+            <tr>
+                <th style="width: 30%">Action</th>
+                <th style="width: 30%">Command</th>
+                <th style="width: 40%"></th> <!--column for the copy icon-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>Switch to <i>&lt;branch&gt;</i></td><td class="table_code"><a href="../command_branch/switch.html">git checkout &lt;branch&gt;</a></td><td><span class="copy_in_table"></span></td></tr>
+            <tr><td>Get latest of <i>&lt;branch&gt;</i></td><td class="table_code"><a href="../command_synchronize_change/pull.html">git pull</a></td><td><span class="copy_in_table"></span></td></tr>
+            </tbody>
+        </table>
+    </div>
+        </div>
+
+</body>
+</html>

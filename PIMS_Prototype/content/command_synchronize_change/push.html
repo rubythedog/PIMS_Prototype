@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Push</title>
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css"/>
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css"/>
+    <script src="../../scripts/jquery-3.2.1.js"> </script>
+    <script src="../../scripts/bootstrap.min.js"> </script>
+    <script src="../../scripts/PIMS_Prototype.js"> </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage">
+
+        <br/><br/><!-- GIT DOC --><a href="https://git.github.io/htmldocs/git-push.html">Official Git Documentation - Push</a>
+
+        <div id="header"><h1 class="short">Push</h1></div>
+
+        <h2>DETAILS</h2>
+
+        <div class="sectionbody">
+            <p>Performing a 'push' is the process of updating a &#39;remote branch&#39; with anything missing from a &#39;local branch&#39;.</p>
+            
+            <div class="dlist">
+                <dl>
+                    <!-- COMMAND --><dt class="hdlist1"><em>git push -u origin &lt;feature_branch&gt; </em><span class="copy_in_command"></span></dt>
+                    <!-- EXPLANATION -->
+                    <dd>
+                        <p>Updates <i>&lt;origin/feature_branch&gt;</i> with any the missing commits from <i>&lt;feature_branch&gt;</i>. If <i>&lt;origin/feature_branch&gt;</i> does not exist, it is created.</p>
+                        <p>'-u' adds upstream tracking reference - in case 'git pull' without arguments is used.</p>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="dlist">
+                <dl>
+                    <!-- COMMAND --><dt class="hdlist1"><em>git push -f origin &lt;feature_branch&gt; </em><span class="copy_in_command"></span></dt>
+                    <!-- EXPLANATION -->
+                    <dd>
+                        <p>Same as above. However, the '-f' forces the update to <i>&lt;origin/feature_branch&gt;</i> even though it is not an ancestor of <i>&lt;feature_branch&gt;</i>. This can effectively re-write history of <i>&lt;origin/feature_branch&gt;</i>. Use with caution (and the --dry-run option).</p>
+                    </dd>
+                </dl>
+            </div>
+
+        </div>
+
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+required for font awesome. has to be in the 'root' as this is not an actual web site, but a collection of HTML pages.

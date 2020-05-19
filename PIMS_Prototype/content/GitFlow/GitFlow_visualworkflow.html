@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GitFlow Visual Workflow</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css"/>
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css"/>
+    <script src="../../scripts/jquery-3.2.1.js"> </script>
+    <script src="../../scripts/bootstrap.min.js"> </script>
+    <script src="../../scripts/PIMS_Prototype.js"> </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage accordion">
+
+<div id="header"><div id="overview"></div>
+
+<h1 class="short">GitFlow</h1>
+<div id="content"><div class="sectionbody"><p>Diagrams and text courtesy of <a href="https://datasift.github.io/gitflow/IntroducingGitFlow.html">DataSift</a></p></div></div>
+
+<h2 id="_description">Visual Workflow</h2>
+    <div id="content">
+        <div class="sectionbody">
+
+            <div id ="workflow">
+
+            </div>
+
+            <div>
+                <p>A <strong>master branch</strong> is created</p>
+                <p>A <strong>develop branch</strong> is created from <strong>master</strong></p>
+                <p>New development (new features, non-emergency bug fixes) are built in <strong>feature branches</strong>:</p>
+                <p><img src="../../images/gitflow/GitFlowFeatureBranches.png" alt="GitFlow feature branches" /></p>
+                <p>Feature branches are branched off of the <strong>develop branch</strong>, and finished features and fixes are merged back into the <strong>develop branch</strong> when they’re ready for release:</p>
+                <p><img src="../../images/gitflow/GitFlowDevelopBranch.png" alt="GitFlow develop branch" /></p>
+                <p>When it is time to make a release, a <strong>release branch</strong> is created off of <strong>develop</strong>:</p>
+                <p><img src="../../images/gitflow/GitFlowReleaseBranch.png" alt="GitFlow release branch" /></p>
+                <p>The code in the <strong>release branch</strong> is deployed onto a suitable test environment, tested, and any problems are fixed directly in the release branch. This <strong>deploy -&gt; test -&gt; fix -&gt; redeploy -&gt; retest</strong> cycle continues until you’re happy that the release is good enough to release to customers.</p>
+                <p>When the release is finished, the <strong>release branch</strong> is merged into <strong>master</strong> <strong>and</strong> into <strong>develop</strong> too, to make sure that any changes made in the <strong>release branch</strong> aren’t accidentally lost by new development.</p>
+                <p><img src="../../images/gitflow/GitFlowMasterBranch.png" alt="GitFlow master branch" /></p>
+                <p>The <strong>master branch</strong> tracks released code only. The only commits to <strong>master</strong> are merges from <strong>release branches</strong> and <strong>hotfix branches</strong>.</p>
+                <p><strong>Hotfix branches</strong> are used to create emergency fixes:</p>
+                <p><img src="../../images/gitflow/GitFlowHotfixBranch.png" alt="GitFlow hotfix branch" /></p>
+                <p>They are branched directly from a tagged release in the <strong>master branch</strong>, and when finished are merged back into both <strong>master</strong> and <strong>develop</strong> to make sure that the hotfix isn’t accidentally lost when the next regular release occurs.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+
+
+

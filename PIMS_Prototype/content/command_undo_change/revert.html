@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Revert</title>
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css"/>
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css"/>
+    <script src="../../scripts/jquery-3.2.1.js"> </script>
+    <script src="../../scripts/bootstrap.min.js"> </script>
+    <script src="../../scripts/PIMS_Prototype.js"> </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage">
+
+        <br/><br/><!-- GIT DOC --><a href="https://git.github.io/htmldocs/git-revert.html">Official Git Documentation - Revert</a>
+
+        <div id="header"><h1 class="short">Revert a Commit</h1></div>
+
+        <h2>DETAILS</h2>
+
+        <div class="sectionbody">
+            <p>Performing a 'revert' is the process of creating a new commit that reverses an earlier commit.</p>
+            <div class="dlist">
+
+                 <dl>
+                    <!-- COMMAND --><dt class="hdlist1">git revert --no-edit [SHA-1]<span class="copy_in_command"></span></dt>
+                    <!-- EXPLANATION -->
+                    <dd>
+                        <p>Creates a new commit that effectively reverses the changes of <span class="glossary_def" title="def=def_SHA1;display=[SHA-1]"></span></p>
+                        <p><b>[SHA-1]</b> a (40-byte hexadecimal string) that idenfies a commit. You can also use a leading substring that is unique within the repository. E.g. dae86e1950b1277e545cee180551750029cfe735 and dae86e both name the same commit object if there is no other object in your repository whose object name starts with dae86e.</p>
+                        <p><b>--no-edit</b> do not start the commit message editor</p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="dlist">
+
+                <dl>
+                    <!-- COMMAND --><dt class="hdlist1">git revert --no-edit [GIT_REVISION]<span class="copy_in_command"></span></dt>
+                    <!-- EXPLANATION -->
+                    <dd>
+                        <p><b>[GIT_REVISION]</b> <a href="https://git.github.io/htmldocs/gitrevisions.html">revision parameter</a> a way to speficy a commit object</p>
+
+                    </dd>
+                </dl>
+            </div>            
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Check-in Code</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css" />
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css" />
+    <script src="../../scripts/jquery-3.2.1.js"></script>
+    <script src="../../scripts/bootstrap.min.js"></script>
+    <script src="../../scripts/PIMS_Prototype.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage accordion">
+
+<div id="header"><h1 class="short">Check-in Code (aka 'Commit')</h1></div>
+<div id="content"><div class="sectionbody"><p>This page lists the steps to check-in code (commit( code using the  normal (happy path) workflow. i.e. no merge issues.</p></div></div>
+
+    <h2>Steps</h2>
+
+<div id="content">
+<div class="sectionbody">
+            <table class="w3-table-all">
+                <thead>
+                <tr>
+                    <th style="width: 35%">Action</th>
+                    <th style="width: 45%">Command</th>
+                    <th style="width: 20%"></th> <!--column for the copy icon-->
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>Switch to <i>&lt;base_branch&gt;</i></td><td class="table_code"><a href="../command_branch/switch.html">git checkout &lt;base_branch&gt;</a></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>Get latest of <i>&lt;base_branch&gt;</i></td><td class="table_code"><a href="../command_synchronize_change/pull.html">git pull</a></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>Create local <i>&lt;feature_branch&gt;</i></td><td class="table_code"><a href="../command_branch/create_and_switch.html">git checkout -b &lt;feature_branch&gt; &lt;base_branch&gt;</a></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>*****Edit files / do some work*****</td><td>-------------</td></tr>
+                <tr><td>Stage changes to <i>&lt;feature_branch&gt;</i></td><td class="table_code"><a href="../command_make_change/add.html">git add .</a></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>Commit changes to <i>&lt;feature_branch&gt;</i></td><td class="table_code"><a href="../command_make_change/commit.html">git commit -m "yourcomments"</a></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>Push changes to remote</td><td class="table_code"><a href="../command_synchronize_change/push.html">git push -u origin &lt;feature_branch&gt;</a></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>Initiate (remote) merge to <i>&lt;base_branch&gt;</i></td><td><a href="../remote_actions/merge_branches.html">merge branches (via web browser)</a></td><td></td></tr>
+                <tr><td>Complete (remote) merge to <i>&lt;base_branch&gt;</i></td><td>complete pull request (via web browser)</td><td></td></tr>
+                <tr><td>Switch to 'master' (or any other branch)</td><td class="table_code"><a href="../command_branch/switch.html">git checkout &lt;master&gt;</a></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>Delete local <i>&lt;feature_branch&gt;</i></td><td class="table_code"><a href="../command_branch/delete.html">git branch -d &lt;feature_branch&gt;</a></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>Delete (aka 'Prune') local orphaned branches</td><td><a href="../how_do_i/prune_orphan_branches.html">prune branches</a></td><td></td></tr>
+                </tbody>
+            </table>    </div>
+    </div>
+
+</body>
+</html>

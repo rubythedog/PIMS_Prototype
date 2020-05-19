@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chain Git Commands</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css" />
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css" />
+    <script src="../../scripts/jquery-3.2.1.js"></script>
+    <script src="../../scripts/bootstrap.min.js"></script>
+    <script src="../../scripts/PIMS_Prototype.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage accordion">
+
+<div id="header"><h1 class="short">Chain Git commands In Powershell</h1>
+    </div>
+<div id="content">
+    <div class="sectionbody">
+        <p>If you want to run multiple Git commands (repeatedly) with parameters, you can list them in powershell.</p>
+        <p>A sample template is listed below along with a way to call a powershell script from another script.</p>
+    </div></div>
+
+    <h2>Steps</h2>
+
+    <div id="content">
+    <div class="sectionbody">
+        <table class="w3-table-all">
+            <thead>
+            <tr>
+                <th style="width: 20%">Action</th>
+                <th style="width: 60%">Command</th>
+                <th style="width: 20%"></th> <!--column for the copy icon-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>Save template code to 'sample.ps1'</td><td class="table_code">
+
+https://stackoverflow.com/questions/13738634/how-can-i-check-if-a-string-is-null-or-empty-in-powershell
+                <pre>
+if ($args.count -eq 0) 
+{
+    Write-Host &quot; command &#39;param1&#39; &#39;param2&#39;&quot;;exit 0; 
+}
+$param1 = $args[0];if (($str1)[string]::IsNullOrEmpty($param1)) { throw &quot;No param1 specified.&quot;;}
+$param2 = $args[1];if ([string]::IsNullOrEmpty($param2)) { throw &quot;No param2 specified.&quot;;}
+
+cls;
+
+Write-Host &quot;---------------------------------------&quot;; 
+Write-Host &quot;command &#39;$param1&#39; acting with &#39;$param2&#39;.&quot;;
+Write-Host &quot;.&quot;; 
+
+#******************************************************** 
+# git commands 
+# 
+git do_something $param1;
+
+git do_something $param2; 
+                    
+git do_something_else;
+#******************************************************** 
+
+Write-Host &quot;---------------------------------------&quot;; 
+
+if (-NOT ([string]::IsNullOrEmpty($waitForKey))) 
+{
+    Write-Host &quot;Press any key to continue...&quot;;
+    $Host.UI.RawUI.ReadKey(&quot;NoEcho,IncludeKeyDown&quot;);
+} 
+#********************************************************
+                    </pre></td><td><span class="copy_in_table"></span></td></tr>
+                <tr><td>Copy 'sample.ps1' to repository folder.</td><td>Using Windows Explorer</td><td></td></tr>
+                <tr><td>Edit 'sample.ps1' as required.</td><td>Code editor of choice</td><td></td></tr>
+                <tr><td>Navigate to repository folder</td><td>Using Windows Explorer</td><td></td></tr>
+                <tr><td>Launch PowerShell</td><td>type 'powershell' in Windows Explorer address bar</td><td></td></tr>
+
+            <tr><td>Optional - call 'sample.ps1' from another script</td><td class="table_code">
+
+<pre>
+$branch1 = &#39;master&#39;; 
+$branch2 = &#39;develop&#39;;
+&amp; .\sample.ps1 $branch1 $branch2
+</pre></td><td><span class="copy_in_table"></span></td></tr>
+            </tbody>
+        </table>
+    </div>
+        </div>
+
+</body>
+</html>

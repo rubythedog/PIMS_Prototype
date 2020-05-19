@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Pull</title>
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css"/>
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css"/>
+    <script src="../../scripts/jquery-3.2.1.js"> </script>
+    <script src="../../scripts/bootstrap.min.js"> </script>
+    <script src="../../scripts/PIMS_Prototype.js"> </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage">
+
+        <br/><br/><!-- GIT DOC --><a href="https://git.github.io/htmldocs/git-pull.html">Official Git Documentation - Pull</a>
+
+        <div id="header"><h1 class="short">Pull</h1></div>
+
+        <h2>DETAILS</h2>
+
+        <div class="sectionbody">
+            <p>Performing a 'pull' is the process of doing a 'get latest', or fetching, then merging changes into a branch.</p>
+            
+            <div class="dlist">
+                <dl>
+                    <!-- COMMAND --><dt class="hdlist1"><em>git pull </em><span class="copy_in_command"></span></dt>
+                    <!-- EXPLANATION -->
+                    <dd>
+                        <p>Fetch from and integrate with another repository or a local branch into the <b>current branch</b>.</p>
+
+                        <p>This is the transactional equivalent of:</p>
+                        <!-- BEGIN LISTING-->
+                        <div class="listingblock">
+                            <div class="content">
+                                <pre>
+$ git fetch<b class="conum">(1)</b>
+$ git merge<b class="conum">(2)</b>
+</pre>
+                            </div>
+                            <div class="colist arabic">
+                                <ol>
+                                    <li><p><span class = "glossary_def" title="def=def_fetch;display=fetch"></span> changes from the remote branch to your 'remote-tracking' branch</p></li>
+                                    <li>
+                                        <p>performs a <span class = "glossary_def" title="def=def_fast_forward;display=fast-forward"></span> merge of the changes</p>
+
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- BEGIN LISTING-->
+                    </dd>
+                </dl>
+            </div>
+
+          <div class="dlist">
+                <dl>
+                    <!-- COMMAND --><dt class="hdlist1"><em>git pull --no-ff</em><span class="copy_in_command"></span></dt>
+                    <!-- EXPLANATION -->
+                    <dd>
+                        <p>Performs a 'pull' without a fast-forward merge.</p>
+                        <dd>
+                            <p><b>--no-ff</b> creates a merge commit in all cases, even when the merge could instead be resolved as a fast-forward</p>
+                        </dd>
+
+                    </dd>
+                </dl>
+            </div>
+
+
+        </div>
+    
+        <h2>EXAMPLE</h2>
+        <div class="sectionbody">
+            <p>Assume the following history exists:</p>
+            <div class="listingblock">
+                <div class="content">
+                    <pre>          A---B---C origin/feature_branch
+         /
+    D---E---F---G feature_branch
+        ^
+        origin/feature_branch in your repository</pre>
+                </div>
+            </div>
+            <div class="paragraph"><p>From this point, the result of the following command:</p></div>
+            <div class="literalblock">
+                <div class="content">
+                    <pre>git pull
+</pre>
+                </div>
+            </div>
+            <div class="paragraph"><p>would be:</p></div>
+            <div class="listingblock">
+                <div class="content">
+                    <pre>          A---B---C origin/feature_branch
+         /         \
+    D---E---F---G---H feature_branch</pre>
+                </div>
+            </div>
+        </div>
+
+
+        <h2>NOTE ABOUT FAST-FORWARDS</h2>
+        <div class="sectionbody">
+            <p>When an update changes a branch (or more in general, a ref) that used to point at commit A to point at another commit B, it is called a fast-forward update if and only if B is a descendant of A.</p>
+            <p>In a fast-forward update from A to B, the set of commits that the original commit A built on top of is a subset of the commits the new commit B builds on top of. Hence, it does not lose any history.</p>
+            <p>In contrast, a non-fast-forward update will lose history. For example, suppose you and somebody else started at the same commit X, and you built a history leading to commit B while the other person built a history leading to commit A. The history looks like this:</p>
+            <div class="listingblock">
+                <div class="content">
+                    <pre>
+      B
+     /
+ ---X---A
+</pre>
+                </div>
+            </div>
+            <p>Further suppose that the other person already pushed changes leading to A back to the original repository from which you two obtained the original commit X.</p>
+            <p>The push done by the other person updated the branch that used to point at commit X to point at commit A. It is a fast-forward.</p>
+            <p>But if you try to push, you will attempt to update the branch (that now points at A) with commit B. This does not fast-forward. If you did so, the changes introduced by commit A will be lost, because everybody will now start building on top of B.</p>
+            <p>The command by default does not allow an update that is not a fast-forward to prevent such loss of history.</p>
+            <p>If you do not want to lose your work (history from X to B) or the work by the other person (history from X to A), you would need to first fetch the history from the repository, create a history that contains changes done by both parties, and push the result back.</p>
+            <p>You can perform "git pull", resolve potential conflicts, and "git push" the result. A "git pull" will create a merge commit C between commits A and B.</p>
+            <div class="literalblock">
+                <div class="content">
+                    <pre>
+      B---C
+     /   /
+ ---X---A
+</pre>
+                </div>
+            </div>
+            <p>Updating A with the resulting merge commit will fast-forward and your push will be accepted.</p>
+            <p>Alternatively, you can rebase your change between X and B on top of A, with "git pull --rebase", and push the result back. The rebase will create a new commit D that builds the change between X and B on top of A.</p>
+            <div class="literalblock">
+                <div class="content">
+                    <pre>
+      B   D
+     /   /
+ ---X---A
+</pre>
+                </div>
+            </div>
+            <p>Again, updating A with this commit will fast-forward and your push will be accepted.</p>
+            <p>There is another common situation where you may encounter non-fast-forward rejection when you try to push, and it is possible even when you are pushing into a repository nobody else pushes into. After you push commit A yourself (in the first picture in this section), replace it with "git commit --amend" to produce commit B, and you try to push it out, because forgot that you have pushed A out already. In such a case, and only if you are certain that nobody in the meantime fetched your earlier commit A (and started building on top of it), you can run "git push --force" to overwrite it. In other words, "git push --force" is a method reserved for a case where you do mean to lose history.</p>
+        </div>
+
+
+</body>
+</html>

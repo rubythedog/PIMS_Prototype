@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Add</title>
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css"/>
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css"/>
+    <script src="../../scripts/jquery-3.2.1.js"> </script>
+    <script src="../../scripts/bootstrap.min.js"> </script>
+    <script src="../../scripts/PIMS_Prototype.js"> </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage">
+
+        <br/><br/><!-- GIT DOC --><a href="https://git.github.io/htmldocs/git-add.html">Official Git Documentation - Add</a>
+
+        <div id="header"><h1 class="short">Add (AKA 'stage')</h1></div>
+
+        <h2>DETAILS</h2>
+
+        <div class="sectionbody">
+            <p>Performing an 'add' / staging' is the process of updating (but not comitting) the current branch with new or modified files. This command can be performed multiple times before a commit. It only adds the content of the specified file(s) at the time the add command is run.</p>
+            
+            <div class="dlist">
+                <dl>
+                    <!-- COMMAND --><dt class="hdlist1"><em>git add .</em><span class="copy_in_command"></span></dt>
+                    <!-- EXPLANATION -->
+                    <dd>
+                        <p>Adds all files / folders that or have changed. Note: will only add files/folders in the current folder / sub-folder.</p>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="dlist">
+                <dl>
+                    <!-- COMMAND --><dt class="hdlist1"><em>git add *.html</em></dt>
+                    <!-- EXPLANATION -->
+                    <dd>
+                        <p>Adds changed files that have an extension of 'html'.</p>
+                    </dd>
+                </dl>
+            </div>
+
+        </div>
+    
+</body>
+</html>

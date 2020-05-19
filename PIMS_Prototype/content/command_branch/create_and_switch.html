@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Create and Switch Branch</title>
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css"/>
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css"/>
+    <script src="../../scripts/jquery-3.2.1.js"> </script>
+    <script src="../../scripts/bootstrap.min.js"> </script>
+    <script src="../../scripts/PIMS_Prototype.js"> </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage">
+
+        <br/><br/><!-- GIT DOC --><a href="https://git.github.io/htmldocs/git-checkout.html">Official Git Documentation - Switching Branches</a>
+
+        <div id="header"><h1 class="short">Create and Switch</h1></div>
+
+        <h2>DETAILS</h2>
+
+        <div class="sectionbody">
+            <p>Allows a branch to be created (using an existing branch as a 'base'), then immediately switches to it to allow work to be done.</p>
+            
+            <div class="dlist">
+                <dl>
+                    <!-- COMMAND --><dt class="hdlist1"><em>git checkout -b &lt;new_branch&gt; &lt;base_branch&gt;</em><span class="copy_in_command"></span></dt>
+                    <!-- EXPLANATION -->
+                    
+                    <dd>
+                        <p>Note: &lt;base_branch&gt must exist locally.</p>
+                        <p><b>-b</b> Creates a new branch named &lt;new_branch&gt;</p>
+
+                        <p>This is the transactional equivalent of:</p>
+                        <!-- BEGIN LISTING-->
+                        <div class="listingblock">
+                            <div class="content">
+                                <pre>
+$ git branch -f &lt;new_branch&gt; [&lt;base_branch&gt;]  <b class="conum">(1)</b>
+$ git checkout &lt;new_branch&gt;                    <b class="conum">(2)</b>
+</pre>
+                            </div>
+                            <div class="colist arabic">
+                                <ol>
+                                    <li>
+                                        <p>create branch from another branch</p></li>
+                                    <li>
+                                        <p>switch to newly created branch</p></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- BEGIN LISTING-->
+                    </dd>
+                </dl>
+            </div>
+        </div>
+</body>
+</html>

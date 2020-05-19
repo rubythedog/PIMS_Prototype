@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Git Commands</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/google_fonts.css" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../styles/PIMS_Prototype2.css"/>
+    <link rel="stylesheet" href="../styles/font-awesome.min.css"/>
+    <script src="../scripts/jquery-3.2.1.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/PIMS_Prototype.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_BasePage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage">
+
+    <div id="header"><h1 class="short">Git Commands</h1></div>
+    <div id="content"><div class="sectionbody"><p>This page focuses on Git commands that are performed on your <span class = "glossary_def" title="def=def_working_tree;display=working tree"></span>. The most 'common' usage is listed first for each topic. Note: the categories were copied from the <a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf" >GitHub Cheat Sheet</a></p>
+        <p><a href="https://dzone.com/articles/top-20-git-commands-with-examples">https://dzone.com/articles/top-20-git-commands-with-examples</a></p></div></div>
+    
+    <div id="content">
+        <h2 id="_description">Information</h2>
+        <div class="sectionbody">
+            <p><a href="../content/command_other/status.html">Status</a> - view pending changes, current branch</p>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <h2 id="_description">Branches</h2>
+        <div class="sectionbody">
+            <p><a href="../content/command_branch/create_and_switch.html">Create and Switch</a> - create, and switch to branch</p>
+            <p><a href="../content/command_branch/switch.html">Switch</a> - switch to branch</p>
+            <p><a href="../content/command_branch/delete.html">Delete</a> - delete branch</p>
+            <p><a href="../content/command_branch/create.html">Create</a> - create branch</p>
+        </div>
+    </div>
+
+    <div id="content">
+        <h2 id="_description">Synchronize Changes</h2>
+        <div class="sectionbody">
+            <p><a href="../content/command_synchronize_change/rebase.html">Rebase</a> - apply changes to a branch from a different (base) branch</p>
+            <p><a href="../content/command_synchronize_change/pull.html">Pull</a> - fetch changes from a remote branch, merge changes into local branch</p>
+            <p><a href="../content/command_synchronize_change/push.html">Push</a> - update a remote branch with the commits from a local branch</p>
+        </div>
+    </div>
+
+    <div id="content">
+        <h2 id="_description">Make Changes</h2>
+        <div class="sectionbody">
+            <p><a href="../content/command_make_change/add.html">Add</a> - prepare (aka 'stage') changes to be applied to a branch</p>
+            <p><a href="../content/command_make_change/remove.html">Remove</a> - 'untrack' remove from version control (but will remain on your disk)</p>
+            <p><a href="../content/command_make_change/commit.html">Commit</a> - apply changes to a branch</p>
+        </div>
+    </div>
+
+    <div id="content">
+        <h2 id="_description">Undo/Discard Changes</h2>
+        <div class="sectionbody">
+            <p><a href="../content/command_undo_change/restore.html">Restore</a> - 'undo' changes to a branch</p>
+            <p><a href="../content/command_undo_change/reset.html">Reset</a> - returning a branch to a previous state</p>
+            <p><a href="../content/command_undo_change/clean.html">Clean</a> - remove untracked changes from the working tree</p>
+            <p><a href="../content/command_undo_change/revert.html">Revert</a> - 'undo' a commit</p>
+        </div>
+    </div>
+
+    <div id="content">
+        <h2 id="_description">Create Repositories</h2>
+        <div class="sectionbody">
+            <p><a href="../content/command_create_repository/clone.html">Clone</a> - create a local repository</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

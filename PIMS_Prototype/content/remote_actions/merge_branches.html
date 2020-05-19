@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Merge Branches</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles/google_fonts.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype_navbar.css" />
+    <link rel="stylesheet" href="../../styles/PIMS_Prototype2.css" />
+    <link rel="stylesheet" href="../../styles/font-awesome.min.css" />
+    <script src="../../scripts/jquery-3.2.1.js"></script>
+    <script src="../../scripts/bootstrap.min.js"></script>
+    <script src="../../scripts/PIMS_Prototype.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            UIInitialize_SubFolderPage();
+            EventHandlers_Register();
+        });</script>
+</head>
+
+<span id="menu"></span>
+
+<body class="manpage accordion">
+
+<div id="header"><h1 class="short">Merge Branches</h1></div>
+<div id="content"><div class="sectionbody"><p>This page lists the steps to <span class="glossary_def" title="def=def_merge;display=merge">merge </span><i>&lt;source_branch&gt;</i> into <i>&lt;target_branch&gt;</i></p></div></div>
+
+    <h2>Steps</h2>
+
+<div id="content">
+<div class="sectionbody">
+        <a id="create_pull_request"></a>
+            <div class="colist arabic">
+                <ol>
+                                       <li>Open a browser. Navigate to the TFS project hosting the repository</li>
+                    <li>Click on 'Repos' and select the repository</li>
+                    <li>Click on 'branches'</li>
+                    <li>On the right hand panel, click the '...' beside <i>&lt;target_branch&gt;</i> and select 'set as compare branch'. Unlock branch if necessary.</li>
+                    <li>Hover of the line of the <i>&lt;source_branch&gt;</i>, select 'new pull request'.</li>
+                    <li>Enter required fields, then click 'create'</li>
+                </ol>
+            </div>
+    </div>
+    </div>
+
+</body>
+</html>
