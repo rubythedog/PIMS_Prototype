@@ -6,23 +6,23 @@ function Create_Menu_HTML() {
 	str += "<li class=\"nav-item dropdown\">";
 	str +="<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Home</a>";
 	str +="<div class=\"dropdown-menu\">";
-    str +="<a class=\"dropdown-item\" href=\"content\\Welcome.html\">Welcome</a>";
-    str +="<a class=\"dropdown-item\" href=\"content\\About.html\">About</a>";
+    str +="<a class=\"dropdown-item\" href=\"content\\welcome.html\">Welcome</a>";
+    str +="<a class=\"dropdown-item\" href=\"content\\about.html\">About</a>";
 	str +="</div>";
 	str +="</li>";
 
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\GettingStarted.html\" >Getting Started</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\HowDoI.html\" >How Do I...</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\gettingStarted.html\" >Getting Started</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\howdoi.html\" >How Do I...</a></li>";
     str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\git_commands.html\" >Git Commands</a></li>";
     str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\remote_actions.html\" >Remote Actions (TFS)</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\Resources.html\" >Resources</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\resources.html\" >Resources</a></li>";
 
 	str += "<li class=\"nav-item dropdown\">";
 	str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">GitFlow</a>";
 	str += "<div class=\"dropdown-menu\">";
     str += "<a class=\"dropdown-item\" href=\"content\\GitFlow.html\">Overview</a>";
-	str += "<a class=\"dropdown-item\" href=\"content\\GitFlow\\GitFlow_commands.html\">Commands</a>";
-	str += "<a class=\"dropdown-item\" href=\"content\\GitFlow\\GitFlow_visualworkflow.html\">Visual Workflow</a>";
+	str += "<a class=\"dropdown-item\" href=\"content\\gitflow\\GitFlow_commands.html\">Commands</a>";
+	str += "<a class=\"dropdown-item\" href=\"content\\gitflow\\GitFlow_visualworkflow.html\">Visual Workflow</a>";
 	str += "</div>";
 	str += "</li>";
     
