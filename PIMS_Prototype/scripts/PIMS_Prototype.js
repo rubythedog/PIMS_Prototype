@@ -11,7 +11,7 @@ function Create_Menu_HTML() {
 	str +="</div>";
 	str +="</li>";
 
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\gettingStarted.html\" >Getting Started</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\gettingstarted.html\" >Getting Started</a></li>";
     str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\howdoi.html\" >How Do I...</a></li>";
     str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\git_commands.html\" >Git Commands</a></li>";
     str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\remote_actions.html\" >Remote Actions (TFS)</a></li>";
