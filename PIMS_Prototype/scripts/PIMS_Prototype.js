@@ -6,28 +6,28 @@ function Create_Menu_HTML() {
 	str += "<li class=\"nav-item dropdown\">";
 	str +="<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Home</a>";
 	str +="<div class=\"dropdown-menu\">";
-    str +="<a class=\"dropdown-item\" href=\"Content\\Welcome.html\">Welcome</a>";
-    str +="<a class=\"dropdown-item\" href=\"Content\\About.html\">About</a>";
+    str +="<a class=\"dropdown-item\" href=\"content\\Welcome.html\">Welcome</a>";
+    str +="<a class=\"dropdown-item\" href=\"content\\About.html\">About</a>";
 	str +="</div>";
 	str +="</li>";
 
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"Content\\GettingStarted.html\" >Getting Started</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"Content\\HowDoI.html\" >How Do I...</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"Content\\git_commands.html\" >Git Commands</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"Content\\remote_actions.html\" >Remote Actions (TFS)</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"Content\\Resources.html\" >Resources</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\GettingStarted.html\" >Getting Started</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\HowDoI.html\" >How Do I...</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\git_commands.html\" >Git Commands</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\remote_actions.html\" >Remote Actions (TFS)</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\Resources.html\" >Resources</a></li>";
 
 	str += "<li class=\"nav-item dropdown\">";
 	str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">GitFlow</a>";
 	str += "<div class=\"dropdown-menu\">";
-    str += "<a class=\"dropdown-item\" href=\"Content\\GitFlow.html\">Overview</a>";
-	str += "<a class=\"dropdown-item\" href=\"Content\\GitFlow\\GitFlow_commands.html\">Commands</a>";
-	str += "<a class=\"dropdown-item\" href=\"Content\\GitFlow\\GitFlow_visualworkflow.html\">Visual Workflow</a>";
+    str += "<a class=\"dropdown-item\" href=\"content\\GitFlow.html\">Overview</a>";
+	str += "<a class=\"dropdown-item\" href=\"content\\GitFlow\\GitFlow_commands.html\">Commands</a>";
+	str += "<a class=\"dropdown-item\" href=\"content\\GitFlow\\GitFlow_visualworkflow.html\">Visual Workflow</a>";
 	str += "</div>";
 	str += "</li>";
     
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"Content\\glossary.html\" >Glossary</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"Content\\FAQ.html\" >FAQ</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\glossary.html\" >Glossary</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\FAQ.html\" >FAQ</a></li>";
 	str +="</ul>";
 	str +="</nav>";
 	return str;
@@ -206,7 +206,7 @@ function copyToClipboard(elem) {
             target.id = targetId;
             document.body.appendChild(target);
         }
-        target.textContent = elem.textContent;
+        target.textcontent = elem.textcontent;
     }
     // select the content
     var currentFocus = document.activeElement;
@@ -230,7 +230,7 @@ function copyToClipboard(elem) {
         elem.setSelectionRange(origSelectionStart, origSelectionEnd);
     } else {
         // clear temporary content
-        target.textContent = "";
+        target.textcontent = "";
     }
     return succeed;
 }

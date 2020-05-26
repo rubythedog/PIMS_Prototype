@@ -2,3 +2,5 @@ packages/
 GITTutorial/bin/
 GITTutorial/obj/
 .vs/
+PIMS_Prototype/obj/
+PIMS_Prototype/bin/
