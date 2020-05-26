@@ -27,7 +27,7 @@ function Create_Menu_HTML() {
 	str += "</li>";
     
     str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\glossary.html\" >Glossary</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\FAQ.html\" >FAQ</a></li>";
+    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\faq.html\" >FAQ</a></li>";
 	str +="</ul>";
 	str +="</nav>";
 	return str;
