@@ -79,7 +79,7 @@ function UIInitialize_BasePageMenu() {
     var replacedStr = Create_Menu_HTML();
     
     replacedStr = replacedStr.replace('href=\"#\"', 'hrXef=\"#\"');
-    replacedStr = replacedStr.replace(/href=\"/g, 'href=\"..//');
+    replacedStr = replacedStr.replace(/href=\"/g, 'href=\"../');
     replacedStr = replacedStr.replace('hrXef=\"#\"', 'href=\"#\"');
 
     $("#menu").html(replacedStr);
