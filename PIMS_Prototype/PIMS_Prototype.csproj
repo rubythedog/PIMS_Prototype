@@ -102,6 +102,7 @@
     <Content Include="images\getting_started\git_for_windows_options3.png" />
     <Content Include="content\remote_actions.html" />
     <Content Include="images\FAQ\Ruby_Avitar.jpg" />
+    <Content Include="images\ProsperPlace_Logo.png" />
     <Content Include="images\welcome\git_branching-illustration%402x.png" />
     <Content Include="images\welcome\git_isometric-grid.png" />
     <Content Include="images\welcome\git_logo%402x.png" />
@@ -116,7 +117,7 @@
     <Content Include="content\remote_actions\create_new_repository.html" />
     <Content Include="content\remote_actions\merge_branches.html" />
     <Content Include="scripts\jquery-3.2.1.js" />
-    <Content Include="styles\PIMS_Prototype2.css" />
+    <Content Include="styles\PIMS_Prototype.css" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -152,8 +153,10 @@
     <Content Include="styles\PIMS_Prototype_navbar.css" />
     <Content Include="styles\PIMS_Prototype_local_doc_styles.css" />
     <Content Include="content\git_commands.html" />
+    <Content Include="styles\Site.css" />
+    <Content Include="styles\ViewStyles.css" />
     <Content Include="Web.config" />
-    <Content Include="content\welcome.html" />
+    <Content Include="content\MaintainMember.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,117 @@
+﻿/************************************************************************/
+/*variables
+/************************************************************************/
+/* validation */
+/************************************************************************/
+/*Container
+/************************************************************************/
+.validationErrorShow li, .validationErrorShow ul {
+  list-style: none;
+  margin-top: 2px; }
+
+.validationErrorShow {
+  font-family: Arial, sans-serif;
+  border: solid 1px #dd3c10;
+  background-color: #ffebe8;
+  width: 921px;
+  padding-left: 10px; }
+  .validationErrorShow legend {
+    color: #333;
+    font-family: Arial, sans-serif; }
+  .validationErrorShow li {
+    color: #333; }
+  .validationErrorShow ul {
+    margin-top: 10px;
+    margin-left: 20px; }
+
+.validationErrorHide {
+  display: none; }
+
+/************************************************************************/
+/*Container
+/************************************************************************/
+.viewContainer {
+  width: 921px;
+  border: 1px solid black;
+  border-collapse: collapse; }
+  .viewContainer td {
+    vertical-align: top;
+    padding: 10px;
+    border: none; }
+  .viewContainer .topLeftCell {
+    width: 80%; }
+    .viewContainer .topLeftCell fieldset {
+      padding: 10px;
+      border-color: silver;
+      border-style: solid; }
+  .viewContainer legend {
+    font-family: Arial, sans-serif; }
+  .viewContainer .fieldsetAddEdit {
+    padding: 10px;
+    border-color: silver;
+    border-style: solid;
+    width: 75%; }
+
+/************************************************************************/
+/*Master Table
+/************************************************************************/
+.tableMaster {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 4px;
+  font-family: Arial, sans-serif; }
+  .tableMaster td, .tableMaster th {
+    vertical-align: top;
+    padding: 10px;
+    border: 1px solid silver;
+    text-align: left; }
+
+.tableMaster > tbody > tr > :nth-child(1) {
+  /*hide the first column as it's the ID column*/
+  display: none; }
+
+/************************************************************************/
+/*Detail Table
+/************************************************************************/
+.tableDetail {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+  margin: 4px;
+  font-family: Arial, sans-serif; }
+  .tableDetail td:first-child {
+    width: 20%; }
+  .tableDetail td:nth-child(2) {
+    width: 200px; }
+
+/************************************************************************/
+/*Buttons
+/*
+/*    https://www.w3schools.com/css/css3_buttons.asp
+/*
+/************************************************************************/
+.verticalButton, .verticalButtonDisabled, .horizontalButton, .horizontalButtonDisabled {
+  min-width: 150px; }
+
+.verticalButton, .verticalButtonDisabled {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.verticalButtonDisabled {
+  opacity: 0.6;
+  cursor: not-allowed; }
+
+.horizontalButtonDisabled {
+  opacity: 0.6;
+  cursor: not-allowed; }
+
+.tblRow_Click {
+  /* make effectively invisible*/
+  padding-left: 0;
+  padding-right: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  white-space: nowrap;
+  overflow: hidden; }
