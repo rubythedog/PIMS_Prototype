@@ -110,6 +110,14 @@ function UIInitialize_CopyIcons() {
     $(".copy_in_command").html(str);
 }
 
+function UIInitialize_InsertRequiredAsterisk() {
+    var str = Create_CopyInTable_HTML();
+    $(".copy_in_table").html(str);
+
+    str = Create_CopyInCommand_HTML();
+    $(".copy_in_command").html(str);
+}
+
 function UIInitialize_Glossary() {
     //<span class = "glossary_def" title="def=def_fast_forward;display=fast-forward"> </span>
     //<a href="https://git.github.io/htmldocs/user-manual.html#def_fast_forward" >fast-forward</a>

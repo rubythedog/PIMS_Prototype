@@ -1,0 +1,220 @@
+﻿/************************************************************************/
+/*variables
+/************************************************************************/
+$font: Arial, sans-serif;
+
+/* validation */
+$validationFontColor: #333;
+
+$validationErrorBorder: #dd3c10;
+$validationErrorBackgroundColor: #ffebe8;
+
+$validationWarningBorder: #dd3c10;
+$validationWarningBackgroundColor: #fff9d7;
+
+$validationWarningInfoBorder: #0d3692;
+$validationWarningInfoBackgroundColor: #dfe4ee;
+
+$validationSuccessBorder: #E2C822;
+$validationWarningBackgroundColor: #FFF9D7;
+
+$pageWidth:1000px;
+
+
+/************************************************************************/
+/*Validation
+/************************************************************************/
+%list-shared{
+	list-style:none;
+	margin-top: 2px;	
+}
+
+.validationErrorShow {
+    font-family: $font;
+    border: solid 1px $validationErrorBorder;
+    background-color: $validationErrorBackgroundColor;
+    width: $pageWidth;
+    padding-left: 10px;
+
+    legend {
+        color: $validationFontColor;
+        font-family: $font;
+    }
+
+    li {
+        @extend %list-shared;
+        color: $validationFontColor;
+    }
+
+    ul {
+        @extend %list-shared;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+}
+
+.validationErrorHide{
+    display:none;    
+}
+
+
+/************************************************************************/
+/*Container
+/************************************************************************/
+.viewContainer {
+    width: $pageWidth;
+    /*border: 1px solid black;*/
+    border-collapse: collapse;
+
+    td {
+        vertical-align: top;
+        padding: 10px;
+        border: none;
+    }
+
+    .topLeftCell {
+        width: 80%;
+
+        fieldset {
+            padding: 10px;
+            border-color: silver;
+            border-style: solid;
+        }
+    }
+
+    legend {
+        font-family: $font;
+        font-weight: bold;
+    }
+
+    .fieldsetAddEdit {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-color: silver;
+        border-style: solid;
+        width: 75%;
+        margin-top: 20px
+    }
+}
+
+/************************************************************************/
+/*Master Table
+/************************************************************************/
+/*.tableMaster {
+	width:100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin:4px;
+	font-family: $font;
+
+    td, th {
+	    vertical-align: top;
+	    padding: 10px;
+	    border: 1px solid silver;
+	    text-align:left;
+    }
+}*/
+
+/*hide the first column as it's the ID column*/
+/*.tableMaster > tbody > tr >:nth-child(1) { 
+    display: none;
+}*/
+
+
+
+/************************************************************************/
+/*Maintain View
+/************************************************************************/
+
+.tableMaintain {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    margin: 4px;
+    font-family: $font;
+
+    td:first-child {
+        width: 40%;
+        text-align: right
+    }
+
+    td:nth-child(2) {
+        width: 1px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    td:nth-child(3) {
+        width: 60%;
+    }
+
+    .isEdittable {
+        background: white;
+    }
+
+    .isSmallField {
+        width: 100%;
+    }
+
+    .isLargeField {
+        width: 100%;
+        height: 100px;
+    }
+
+    .isRequired {
+        
+    }
+}
+
+
+/************************************************************************/
+/*Data Entry
+/************************************************************************/
+
+
+/************************************************************************/
+/*Buttons
+/*
+/*    https://www.w3schools.com/css/css3_buttons.asp
+/*
+/************************************************************************/
+%button-shared {
+	min-width: 150px
+}
+
+.verticalButton {
+    @extend %button-shared;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.verticalButtonDisabled {
+    @extend .verticalButton;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.horizontalButton {
+    @extend %button-shared;
+}
+
+.horizontalButtonDisabled {
+    @extend .horizontalButton;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.tblRow_Click {
+    /* make effectively invisible*/
+     padding-left: 0; padding-right: 0;
+     border-left-width: 0; border-right-width: 0;
+     white-space: nowrap;
+     overflow: hidden;
+}
+
+

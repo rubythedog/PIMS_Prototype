@@ -3,7 +3,7 @@
 /************************************************************************/
 /* validation */
 /************************************************************************/
-/*Container
+/*Validation
 /************************************************************************/
 .validationErrorShow li, .validationErrorShow ul {
   list-style: none;
@@ -13,7 +13,7 @@
   font-family: Arial, sans-serif;
   border: solid 1px #dd3c10;
   background-color: #ffebe8;
-  width: 921px;
+  width: 1000px;
   padding-left: 10px; }
   .validationErrorShow legend {
     color: #333;
@@ -31,8 +31,8 @@
 /*Container
 /************************************************************************/
 .viewContainer {
-  width: 921px;
-  border: 1px solid black;
+  width: 1000px;
+  /*border: 1px solid black;*/
   border-collapse: collapse; }
   .viewContainer td {
     vertical-align: top;
@@ -45,46 +45,70 @@
       border-color: silver;
       border-style: solid; }
   .viewContainer legend {
-    font-family: Arial, sans-serif; }
+    font-family: Arial, sans-serif;
+    font-weight: bold; }
   .viewContainer .fieldsetAddEdit {
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-color: silver;
     border-style: solid;
-    width: 75%; }
+    width: 75%;
+    margin-top: 20px; }
 
 /************************************************************************/
 /*Master Table
 /************************************************************************/
-.tableMaster {
-  width: 100%;
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 4px;
-  font-family: Arial, sans-serif; }
-  .tableMaster td, .tableMaster th {
-    vertical-align: top;
-    padding: 10px;
-    border: 1px solid silver;
-    text-align: left; }
+/*.tableMaster {
+	width:100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin:4px;
+	font-family: $font;
 
-.tableMaster > tbody > tr > :nth-child(1) {
-  /*hide the first column as it's the ID column*/
-  display: none; }
-
+    td, th {
+	    vertical-align: top;
+	    padding: 10px;
+	    border: 1px solid silver;
+	    text-align:left;
+    }
+}*/
+/*hide the first column as it's the ID column*/
+/*.tableMaster > tbody > tr >:nth-child(1) { 
+    display: none;
+}*/
 /************************************************************************/
-/*Detail Table
+/*Maintain View
 /************************************************************************/
-.tableDetail {
+.tableMaintain {
   width: 100%;
   border: none;
   border-collapse: collapse;
   margin: 4px;
   font-family: Arial, sans-serif; }
-  .tableDetail td:first-child {
-    width: 20%; }
-  .tableDetail td:nth-child(2) {
-    width: 200px; }
+  .tableMaintain td:first-child {
+    width: 40%;
+    text-align: right; }
+  .tableMaintain td:nth-child(2) {
+    width: 1px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .tableMaintain td:nth-child(3) {
+    width: 60%; }
+  .tableMaintain .isEdittable {
+    background: white; }
+  .tableMaintain .isSmallField {
+    width: 100%; }
+  .tableMaintain .isLargeField {
+    width: 100%;
+    height: 100px; }
 
+/************************************************************************/
+/*Data Entry
+/************************************************************************/
 /************************************************************************/
 /*Buttons
 /*

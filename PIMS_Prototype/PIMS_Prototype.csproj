@@ -103,6 +103,7 @@
     <Content Include="content\remote_actions.html" />
     <Content Include="images\FAQ\Ruby_Avitar.jpg" />
     <Content Include="images\ProsperPlace_Logo.png" />
+    <Content Include="images\ProsperPlace_Logo2.png" />
     <Content Include="images\welcome\git_branching-illustration%402x.png" />
     <Content Include="images\welcome\git_isometric-grid.png" />
     <Content Include="images\welcome\git_logo%402x.png" />
@@ -117,12 +118,28 @@
     <Content Include="content\remote_actions\create_new_repository.html" />
     <Content Include="content\remote_actions\merge_branches.html" />
     <Content Include="scripts\jquery-3.2.1.js" />
+    <Content Include="scripts\umd\popper-utils.js" />
+    <Content Include="scripts\umd\popper-utils.min.js" />
+    <Content Include="scripts\umd\popper.js" />
+    <Content Include="scripts\umd\popper.min.js" />
     <Content Include="styles\PIMS_Prototype.css" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="scripts\umd\popper-utils.js.map" />
+    <Content Include="scripts\umd\popper-utils.min.js.map" />
+    <Content Include="scripts\umd\popper.js.map" />
+    <Content Include="scripts\umd\popper.min.js.map" />
+    <Content Include="styles\ViewStyles.min.css">
+      <DependentUpon>ViewStyles.css</DependentUpon>
+    </Content>
+    <Content Include="styles\ViewStyles.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

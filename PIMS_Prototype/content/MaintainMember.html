@@ -25,24 +25,40 @@
 
 <span id="menu"></span>
 
-<body >
-<div>
-    <img src="../images/ProsperPlace_Logo2.png" width="200" />
-</div>
+<body class="body-content">
+    <div>
+        <img src="../images/ProsperPlace_Logo2.png" width="200" />
+    </div>
+    <br />
 
-<div class="viewContainer"> 
+    <div class="viewContainer">
 
-    
-<fieldset class="fieldsetAddEdit">
-        <legend>Member Information</legend>
 
-        <table ID="tblMemberInformation" class="tableMaintain">
-            <tr class="tableMaintainRow"><td>First Name *</td><td><input class="IsDisplayOnly" id="FirstName" type="text" value="" style="background: white;"></td></tr>
+        <fieldset class="fieldsetAddEdit">
+            <legend>Member Information</legend>
 
-        </table>
-    </fieldset>
+            <table ID="tblMemberInformation" class="tableMaintain">
 
-<div>
+                <tr><td>First Name</td><td>*</td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField isRequired"></td></tr>
+                <tr><td>Middle Name</td><td></td><td><input id="MiddleName" type="text" value="" class="isEdittable isSmallField"></td></tr>
+                <tr><td>Last Name</td><td>*</td><td><textarea id="LastName" type="text" value="" class="isEdittable isLargeField"> </textarea></td></tr>
+
+            </table>
+        </fieldset>
+
+        <fieldset class="fieldsetAddEdit">
+            <legend>Address</legend>
+
+            <table ID="tblAddress" class="tableMaintain">
+
+                <tr><td>First Name</td><td>*</td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField"></td></tr>
+                <tr><td>Living Facility Name</td><td>*</td><td><textarea id="LivingFacilityName" type="text" value="" class="isEdittable isLargeField"> </textarea></td></tr>
+
+            </table>
+        </fieldset>
+
+
+    </div>
 </body>
 
 </html>

@@ -1,10 +1,5 @@
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
-/* Default font. */
-body {
-  font-family: Georgia,serif;
-}
-
 /* Title font. */
 h1, h2, h3, h4, h5, h6,
 div.title, caption.title,
@@ -15,9 +10,6 @@ thead, p.table.header,
   font-family: Arial,Helvetica,sans-serif;
 }
 
-body {
-  margin: 1em 5% 1em 5%;
-}
 
 a {
   color: blue;
