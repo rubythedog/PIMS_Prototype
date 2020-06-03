@@ -45,7 +45,7 @@
     <br />
 
     <div class="viewContainer">
-        
+
         <fieldset class="fieldsetAddEdit">
             <legend>SECTION_TEMPLATE</legend>
 
@@ -55,12 +55,16 @@
                 <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
                 <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
                 <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
-                <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker" ></td></tr>
-                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="DATE_TIME_PICKER_ID" type="text" class="isDateTimePicker" ></td></tr>
-                
+                <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker"></td></tr>
+                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="DATE_TIME_PICKER_ID" type="text" class="isDateTimePicker"></td></tr>
+
 
             </table>
         </fieldset>
+
+        <!--************************************************************************-->
+        <!--Member Information                                                      -->
+        <!--************************************************************************-->
 
         <fieldset class="fieldsetAddEdit">
             <legend>Member Information</legend>
@@ -70,26 +74,90 @@
                 <tr><td>First Name</td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField isRequired"></td></tr>
                 <tr><td>Middle Name</td><td><input id="MiddleName" type="text" value="" class="isEdittable isSmallField"></td></tr>
                 <tr><td>Last Name</td><td><input id="LastName" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
-                <tr><td>Gender</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    <option value="3">Non-Binary</option>
-                    <option value="4">Transgender</option>
-                    <option value="5">Prefer To Not Disclose</option>
-                </select></td></tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <select class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                            <option value="3">Non-Binary</option>
+                            <option value="4">Transgender</option>
+                            <option value="5">Prefer To Not Disclose</option>
+                        </select>
+                    </td>
+                </tr>
                 <tr><td>Date of Birth</td><td><input id="DateOfBirth" type="text" class="isDatePicker isRequired"></td></tr>
                 <tr><td>Date of Death</td><td><input id="DateOfDeath" type="text" class="isDatePicker"></td></tr>
 
             </table>
         </fieldset>
 
+        <!--************************************************************************-->
+        <!--Address                                                                 -->
+        <!--************************************************************************-->
         <fieldset class="fieldsetAddEdit">
             <legend>Address</legend>
 
             <table ID="tblAddress" class="tableMaintain">
 
-                <tr><td>First Name</td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField"></td></tr>
+                <tr>
+                    <td>Living Situation</td>
+                    <td>
+                        <select class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Facility Living</option>
+                            <option value="2">Home Living</option>
+                            <option value="3">Supportive Living</option>
+                            <option value="4">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
                 <tr><td>Living Facility Name</td><td><textarea id="LivingFacilityName" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Supportive Living Where</td><td><textarea id="SupportiveLivingWhere" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Facility Living Where</td><td><textarea id="FacilityLivingWhere" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Suite / Unit #</td><td><input id="Suite_Unit" type="text" value="" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>House #</td><td><input id="House_Number" type="text" value="" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Address</td><td><textarea id="Address" class="isEdittable isLargeField isRequired"></textarea></td></tr>
+                <tr>
+                    <td>Quadrant</td>
+                    <td>
+                        <select class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Unknown</option>
+                            <option value="2">SW</option>
+                            <option value="3">SE</option>
+                            <option value="4">NW</option>
+                            <option value="5">NE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td>City</td><td><textarea id="City" class="isEdittable isLargeField isRequired"></textarea></td></tr>
+                <tr>
+                    <td>Province</td>
+                    <td>
+                        <select class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Newfoundland and Labrador</option>
+                            <option value="2">Prince Edward Island</option>
+                            <option value="3">Nova Scotia</option>
+                            <option value="4">New Brunswick</option>
+                            <option value="5">Quebec</option>
+                            <option value="6">Ontario</option>
+                            <option value="7">Manitoba</option>
+                            <option value="8">Saskatchewan</option>
+                            <option value="9">Alberta</option>
+                            <option value="10">British Columbia</option>
+                            <option value="11">Yukon</option>
+                            <option value="12">Northwest Territories</option>
+                            <option value="13">Nunavut</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td>Country</td><td><input id="Country" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>Postal Code</td><td><input id="PostalCode" type="text" value="" class="isEdittable isSmallField"> </td></tr>
+
 
             </table>
         </fieldset>

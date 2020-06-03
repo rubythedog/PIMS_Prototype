@@ -105,6 +105,9 @@ function UIInitialize_InsertRequiredAsterisk() {
     $(".isRequired").each(function () {
         var thisID = $(this);
         var target = thisID[0].parentElement.previousSibling;
+        if (typeof target.innerText === "undefined") {
+            target = thisID[0].parentElement.previousSibling.previousElementSibling;
+        }
         target.innerText += " *";
     });
 }
