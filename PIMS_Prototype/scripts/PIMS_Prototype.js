@@ -62,6 +62,7 @@ function Create_Glossary_HTML() {
 function UIInitialize_BasePage() {
     UIInitialize_BasePageMenu();
     UIInitialize_InsertRequiredAsterisk();
+    UIInitialize_DateTimePickers();
     UIInitialize_HideDivs();
 }
 
@@ -100,14 +101,49 @@ function UIInitialize_SubFolderPageMenu() {
 //******************************************************************************************
 
 
-
 function UIInitialize_InsertRequiredAsterisk() {
     $(".isRequired").each(function () {
         var thisID = $(this);
         var target = thisID[0].parentElement.previousSibling;
-        target.innerText = "*";
+        target.innerText += " *";
     });
 }
+
+function UIInitialize_DateTimePickers() {
+    ////http://www.daterangepicker.com/
+
+    $(".isDateTimePicker").daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker:true,
+        autoUpdateInput: false, //false means don't display a default date
+        startDate: moment(),
+        locale: {
+            format: "MMMM DD, YYYY hh:mm A"
+        }
+    }).attr("Placeholder", "Select Date and Time...");
+
+    //update the date manually
+    $(".isDateTimePicker").on("apply.daterangepicker", function (ev, picker) {
+        $(this).val(picker.startDate.format("MMMM DD, YYYY hh:mm A"));
+    });
+
+    $(".isDatePicker").daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        autoUpdateInput: false, //false means don't display a default date
+        startDate: moment(),
+        locale: {
+            format: "MMMM DD, YYYY"
+        }
+    }).attr("Placeholder", "Select Date...");
+
+    //update the date manually
+    $(".isDatePicker").on("apply.daterangepicker", function (ev, picker) {
+        $(this).val(picker.startDate.format("MMMM DD, YYYY"));
+    });
+}
+
 
 function UIInitialize_Glossary() {
     //<span class = "glossary_def" title="def=def_fast_forward;display=fast-forward"> </span>

@@ -117,11 +117,14 @@
     <Content Include="content\remote_actions\create_new_branch.html" />
     <Content Include="content\remote_actions\create_new_repository.html" />
     <Content Include="content\remote_actions\merge_branches.html" />
+    <Content Include="scripts\daterangepicker.js" />
     <Content Include="scripts\jquery-3.2.1.js" />
+    <Content Include="scripts\moment.min.js" />
     <Content Include="scripts\umd\popper-utils.js" />
     <Content Include="scripts\umd\popper-utils.min.js" />
     <Content Include="scripts\umd\popper.js" />
     <Content Include="scripts\umd\popper.min.js" />
+    <Content Include="styles\daterangepicker.css" />
     <Content Include="styles\PIMS_Prototype.css" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -132,6 +135,9 @@
     <Content Include="scripts\umd\popper-utils.min.js.map" />
     <Content Include="scripts\umd\popper.js.map" />
     <Content Include="scripts\umd\popper.min.js.map" />
+    <Content Include="styles\ViewStyles.css">
+      <DependentUpon>ViewStyles.scss</DependentUpon>
+    </Content>
     <Content Include="styles\ViewStyles.min.css">
       <DependentUpon>ViewStyles.css</DependentUpon>
     </Content>
@@ -171,7 +177,6 @@
     <Content Include="styles\PIMS_Prototype_local_doc_styles.css" />
     <Content Include="content\git_commands.html" />
     <Content Include="styles\Site.css" />
-    <Content Include="styles\ViewStyles.css" />
     <Content Include="Web.config" />
     <Content Include="content\MaintainMember.html" />
   </ItemGroup>

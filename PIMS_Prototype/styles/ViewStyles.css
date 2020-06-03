@@ -105,6 +105,12 @@
   .tableMaintain .isLargeField {
     width: 100%;
     height: 100px; }
+  .tableMaintain .isRequired {
+    background: white; }
+  .tableMaintain .isDateTimePicker {
+    background: white; }
+  .tableMaintain .isDatePicker {
+    background: white; }
 
 /************************************************************************/
 /*Data Entry

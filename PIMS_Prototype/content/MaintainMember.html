@@ -7,17 +7,30 @@
     <link rel="stylesheet" href="../styles/google_fonts.css" />
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
     <link rel="stylesheet" href="../styles/PIMS_Prototype_navbar.css" />
-    <link rel="stylesheet" href="../styles/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../styles/font-awesome.min.css" />
     <script src="../scripts/jquery-3.2.1.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="../scripts/PIMS_Prototype.js"></script>
-    <link rel="stylesheet" href="../styles/PIMS_Prototype.css"/><link rel="stylesheet" href="../styles/ViewStyles.css" /> <link rel="stylesheet" href="../styles/Site.css" />
+    <link rel="stylesheet" href="../styles/PIMS_Prototype.css" />
+    <link rel="stylesheet" href="../styles/ViewStyles.css" />
+    <link rel="stylesheet" href="../styles/Site.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/daterangepicker.css" />
+    <script src="../scripts/moment.min.js"></script>
+    <script src="../scripts/daterangepicker.js"></script>
+    <!--https://github.com/xdan/datetimepicker/issues/665-->
+    <!--https://github.com/dangrossman/daterangepicker-->
+    <!--http://www.daterangepicker.com/-->
+    <!--I switched from this project to date range picker, you can set singleDatePicker as true, then it works like a datetimepicker.-->
+
 
     <script type="text/javascript">
         $(document).ready(function () {
             UIInitialize_BasePage();
             EventHandlers_Register();
-        });</script>
+        });
+
+
+    </script>
 
 
 
@@ -32,16 +45,40 @@
     <br />
 
     <div class="viewContainer">
+        
+        <fieldset class="fieldsetAddEdit">
+            <legend>SECTION_TEMPLATE</legend>
 
+            <table ID="tbl_TABLE_ID" class="tableMaintain">
+
+                <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
+                <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
+                <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker" ></td></tr>
+                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="DATE_TIME_PICKER_ID" type="text" class="isDateTimePicker" ></td></tr>
+                
+
+            </table>
+        </fieldset>
 
         <fieldset class="fieldsetAddEdit">
             <legend>Member Information</legend>
 
             <table ID="tblMemberInformation" class="tableMaintain">
 
-                <tr><td>First Name</td><td></td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField isRequired"></td></tr>
-                <tr><td>Middle Name</td><td></td><td><input id="MiddleName" type="text" value="" class="isEdittable isSmallField"></td></tr>
-                <tr><td>Last Name</td><td></td><td><input id="LastName" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>First Name</td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField isRequired"></td></tr>
+                <tr><td>Middle Name</td><td><input id="MiddleName" type="text" value="" class="isEdittable isSmallField"></td></tr>
+                <tr><td>Last Name</td><td><input id="LastName" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>Gender</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Non-Binary</option>
+                    <option value="4">Transgender</option>
+                    <option value="5">Prefer To Not Disclose</option>
+                </select></td></tr>
+                <tr><td>Date of Birth</td><td><input id="DateOfBirth" type="text" class="isDatePicker isRequired"></td></tr>
+                <tr><td>Date of Death</td><td><input id="DateOfDeath" type="text" class="isDatePicker"></td></tr>
 
             </table>
         </fieldset>
@@ -51,8 +88,8 @@
 
             <table ID="tblAddress" class="tableMaintain">
 
-                <tr><td>First Name</td><td></td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField"></td></tr>
-                <tr><td>Living Facility Name</td><td></td><td><textarea id="LivingFacilityName" type="text" value="" class="isEdittable isLargeField"> </textarea></td></tr>
+                <tr><td>First Name</td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField"></td></tr>
+                <tr><td>Living Facility Name</td><td><textarea id="LivingFacilityName" class="isEdittable isLargeField"></textarea></td></tr>
 
             </table>
         </fieldset>
