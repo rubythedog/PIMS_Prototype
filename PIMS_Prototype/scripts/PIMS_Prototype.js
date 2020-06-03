@@ -61,16 +61,14 @@ function Create_Glossary_HTML() {
 
 function UIInitialize_BasePage() {
     UIInitialize_BasePageMenu();
-    UIInitialize_CopyIcons();
+    UIInitialize_InsertRequiredAsterisk();
     UIInitialize_HideDivs();
-    UIInitialize_Glossary();
 }
 
 function UIInitialize_SubFolderPage() {
     UIInitialize_SubFolderPageMenu();
-    UIInitialize_CopyIcons();
+    UIInitialize_InsertRequiredAsterisk();
     UIInitialize_HideDivs();
-    UIInitialize_Glossary();
 }
 
 function UIInitialize_BasePageMenu() {
@@ -102,20 +100,13 @@ function UIInitialize_SubFolderPageMenu() {
 //******************************************************************************************
 
 
-function UIInitialize_CopyIcons() {
-    var str = Create_CopyInTable_HTML();
-    $(".copy_in_table").html(str);
-
-    str = Create_CopyInCommand_HTML();
-    $(".copy_in_command").html(str);
-}
 
 function UIInitialize_InsertRequiredAsterisk() {
-    var str = Create_CopyInTable_HTML();
-    $(".copy_in_table").html(str);
-
-    str = Create_CopyInCommand_HTML();
-    $(".copy_in_command").html(str);
+    $(".isRequired").each(function () {
+        var thisID = $(this);
+        var target = thisID[0].parentElement.previousSibling;
+        target.innerText = "*";
+    });
 }
 
 function UIInitialize_Glossary() {
