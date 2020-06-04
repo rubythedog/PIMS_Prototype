@@ -49,24 +49,6 @@
 
     <div class="viewContainer">
 
-        <fieldset class="fieldsetAddEdit">
-            <legend>SECTION_TEMPLATE</legend>
-
-            <table ID="tbl_TABLE_ID" class="tableMaintain">
-
-                <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
-                <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
-                <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
-                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
-                <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker"></td></tr>
-                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="DATE_TIME_PICKER_ID" type="text" class="isDateTimePicker"></td></tr>
-                <tr><td>CHECKBOX_LABEL</td><td><input id="CHECKBOX_ID" type="checkbox" class="isEdittable"> </td></tr>
-                <tr><td>PHONENUMBER_LABEL</td><td><input id="PHONENUMBER_ID" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
-
-
-            </table>
-        </fieldset>
-
         <!--************************************************************************-->
         <!--Member Information                                                      -->
         <!--************************************************************************-->
@@ -162,10 +144,10 @@
                 </tr>
                 <tr><td>Country</td><td><input id="Country" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
                 <tr><td>Postal Code</td><td><input id="PostalCode" type="text" class="isEdittable isSmallField"> </td></tr>
-                
+
             </table>
         </fieldset>
-        
+
         <!--************************************************************************-->
         <!--Contact Details                                                         -->
         <!--************************************************************************-->
@@ -173,7 +155,7 @@
             <legend>Contact Details</legend>
 
             <table ID="tblContactDetails" class="tableMaintain">
-                
+
                 <tr><td>Home Phone</td><td><input id="Home_Phone" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr><td>Cell Phone</td><td><input id="Cel_Phone" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr><td>E-Mail Address</td><td><input id="EMailAddress" type="text" class="isEdittable isSmallField "> </td></tr>
@@ -181,7 +163,7 @@
 
             </table>
         </fieldset>
-        
+
         <!--************************************************************************-->
         <!--Emergency Contacts                                                      -->
         <!--************************************************************************-->
@@ -309,7 +291,7 @@
                         <select id="Contact_LegalGuardian_ContactRelationship" class="isEdittable isSmallField">
                             <option value=""></option>
                             <option value="1">Father</option>
-                            <option value="2">Mother</option>
+                            <option value="2">Mother</option>Ontario11111
                             <option value="3">Son</option>
                             <option value="4">Daughter</option>
                             <option value="5">Son-In-law</option>
@@ -463,6 +445,284 @@
 
             </table>
         </fieldset>
+
+        <!--************************************************************************-->
+        <!--Medical                                                  -->
+        <!--************************************************************************-->
+
+        <fieldset class="fieldsetAddEdit">
+            <legend>Medical</legend>
+
+            <table ID="tblMemberInformation" class="tableMaintain">
+
+                <tr><td class="SubSection">Diagnosis</td><td /></tr>
+
+                <tr>
+                    <td>Presenting Problem</td>
+                    <td>
+                        <select id="PresentingProblem" class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Abnormal Moods</option>
+                            <option value="2">Addiction - Alcohol</option>
+                            <option value="3">Addiction - Drugs</option>
+                            <option value="4">Addiction - Gambling/Games</option>
+                            <option value="5">Addiction - Other</option>
+                            <option value="6">Addiction - Sexual</option>
+                            <option value="7">Anger</option>
+                            <option value="8">Antisocial Behaviour</option>
+                            <option value="9">Anxiety</option>
+                            <option value="10">Assault</option>
+                            <option value="11">Bizarre Behaviour</option>
+                            <option value="12">Borderline Intellectual Functioning</option>
+                            <option value="13">Brain Injury</option>
+                            <option value="14">Brief Psychotic Episode</option>
+                            <option value="15">Child & Family Services Involvement</option>
+                            <option value="16">Child Neglect</option>
+                            <option value="17">Child Physical Abuse</option>
+                            <option value="18">Child Psychological Abuse</option>
+                            <option value="19">Child Sexual Abuse</option>
+                            <option value="20">Chronic Illness</option>
+                            <option value="21">Chronic Pain</option>
+                            <option value="22">Cognitive Concerns</option>
+                            <option value="23">Concentration Concerns</option>
+                            <option value="24">Delirium</option>
+                            <option value="25">Depression</option>
+                            <option value="26">Developmental Concerns</option>
+                            <option value="27">Domestic Violence</option>
+                            <option value="28">Eating Issues</option>
+                            <option value="29">Educational Problems</option>
+                            <option value="30">Employment Problems</option>
+                            <option value="31">Financial Problems</option>
+                            <option value="32">Grief</option>
+                            <option value="33">Hallucinations</option>
+                            <option value="34">Hoarding</option>
+                            <option value="35">Homicidal Ideation</option>
+                            <option value="36">Housing Problems</option>
+                            <option value="37">Interpersonal Problems</option>
+                            <option value="38">Learning Problems</option>
+                            <option value="39">Legal Problems</option>
+                            <option value="40">Mania</option>
+                            <option value="41">Medical Condition</option>
+                            <option value="42">Miscarriage</option>
+                            <option value="43">Multicultural Issues</option>
+                            <option value="44">Panic Attacks</option>
+                            <option value="45">Paranoia</option>
+                            <option value="46">Phobia</option>
+                            <option value="47">Physical Abuse</option>
+                            <option value="48">Post-Traumatic Stress</option>
+                            <option value="49">Postpartum Problems</option>
+                            <option value="50">Pregnancy</option>
+                            <option value="51">Psychotic Symptoms</option>
+                            <option value="52">Psychological Abuse</option>
+                            <option value="53">Relational Problems</option>
+                            <option value="54">Self Esteem Concerns</option>
+                            <option value="55">Self-Harm</option>
+                            <option value="56">Sexual Abuse</option>
+                            <option value="57">Sexual Dysfunction</option>
+                            <option value="58">Sexuality Issues</option>
+                            <option value="59">Sleep Problems</option>
+                            <option value="60">Stress</option>
+                            <option value="61">Substance Abuse</option>
+                            <option value="62">Suicidal Ideation</option>
+                            <option value="63">Suicide Attempt</option>
+                            <option value="64">Trauma</option>
+                            <option value="65">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Diagnosis 1</td>
+                    <td>
+                        <select id="Diagnosis1" class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Alcohol-Related Disorder</option>
+                            <option value="2">Anxiety Disorder</option>
+                            <option value="3">Attention-Deficit/Hyperactivity Disorder</option>
+                            <option value="4">Autism Spectrum Disorder</option>
+                            <option value="5">Bipolar and Related Disorder</option>
+                            <option value="6">Caffeine-Related Disorder</option>
+                            <option value="7">Cannabis-Related Disorder</option>
+                            <option value="8">Communication Disorder</option>
+                            <option value="9">Delirium Disorder</option>
+                            <option value="10">Depressive Disorder</option>
+                            <option value="11">Disruptive, Impulse-Control, and Conduct Disorder</option>
+                            <option value="12">Dissociative Disorder</option>
+                            <option value="13">Eating Disorder</option>
+                            <option value="14">Elimination Disorder</option>
+                            <option value="15">Gender Dysphoria Personality Disorder</option>
+                            <option value="16">Hallucinogen-Related Disorder</option>
+                            <option value="17">Inhalant-Related Disorder</option>
+                            <option value="18">Intellectual Disability </option>
+                            <option value="19">Medication-Induced Movement and Other Disorder</option>
+                            <option value="20">Motor Disorder</option>
+                            <option value="21">Neurocognitive Disorder</option>
+                            <option value="22">Non-Substance-Related Disorder</option>
+                            <option value="23">Obsessive-Compulsive or Related Disorder</option>
+                            <option value="24">Opioid-Related Disorder</option>
+                            <option value="25">Other Mental Disorder</option>
+                            <option value="26">Other Neurodevelopmental Disorder</option>
+                            <option value="27">Paraphilic Disorder</option>
+                            <option value="28">Personality Disorder</option>
+                            <option value="29">Schizophrenia Spectrum or Other Psychotic Disorder</option>
+                            <option value="30">Sedative-, Hypnotic-, or Anxiolytic-Related Disorder</option>
+                            <option value="31">Sexual Dysfunction </option>
+                            <option value="32">Sleep Disorder</option>
+                            <option value="33">Somatic Symptom or Related Disorder</option>
+                            <option value="34">Specific Learning Disorder</option>
+                            <option value="35">Stimulant-Related Disorder</option>
+                            <option value="36">Tobacco-Related Disorder</option>
+                            <option value="37">Trauma- or Stressor-Related Disorder</option>
+                            <option value="38">Unspecified Mental Disorder</option>
+                            <option value="39">Unspecified Substance-Related Disorder</option>
+                            <option value="40">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Date Of Diagnosis 1</td><td><input id="DateOfDiagnosis1" type="text" class="isDatePicker isRequired"></td></tr>
+                <tr>
+                    <td>Diagnosis 2</td>
+                    <td>
+                        <select id="Diagnosis2" class="isEdittable  isSmallField">
+                            <option value=""></option>
+                            <option value="1">Alcohol-Related Disorder</option>
+                            <option value="2">Anxiety Disorder</option>
+                            <option value="3">Attention-Deficit/Hyperactivity Disorder</option>
+                            <option value="4">Autism Spectrum Disorder</option>
+                            <option value="5">Bipolar and Related Disorder</option>
+                            <option value="6">Caffeine-Related Disorder</option>
+                            <option value="7">Cannabis-Related Disorder</option>
+                            <option value="8">Communication Disorder</option>
+                            <option value="9">Delirium Disorder</option>
+                            <option value="10">Depressive Disorder</option>
+                            <option value="11">Disruptive, Impulse-Control, and Conduct Disorder</option>
+                            <option value="12">Dissociative Disorder</option>
+                            <option value="13">Eating Disorder</option>
+                            <option value="14">Elimination Disorder</option>
+                            <option value="15">Gender Dysphoria Personality Disorder</option>
+                            <option value="16">Hallucinogen-Related Disorder</option>
+                            <option value="17">Inhalant-Related Disorder</option>
+                            <option value="18">Intellectual Disability </option>
+                            <option value="19">Medication-Induced Movement and Other Disorder</option>
+                            <option value="20">Motor Disorder</option>
+                            <option value="21">Neurocognitive Disorder</option>
+                            <option value="22">Non-Substance-Related Disorder</option>
+                            <option value="23">Obsessive-Compulsive or Related Disorder</option>
+                            <option value="24">Opioid-Related Disorder</option>
+                            <option value="25">Other Mental Disorder</option>
+                            <option value="26">Other Neurodevelopmental Disorder</option>
+                            <option value="27">Paraphilic Disorder</option>
+                            <option value="28">Personality Disorder</option>
+                            <option value="29">Schizophrenia Spectrum or Other Psychotic Disorder</option>
+                            <option value="30">Sedative-, Hypnotic-, or Anxiolytic-Related Disorder</option>
+                            <option value="31">Sexual Dysfunction </option>
+                            <option value="32">Sleep Disorder</option>
+                            <option value="33">Somatic Symptom or Related Disorder</option>
+                            <option value="34">Specific Learning Disorder</option>
+                            <option value="35">Stimulant-Related Disorder</option>
+                            <option value="36">Tobacco-Related Disorder</option>
+                            <option value="37">Trauma- or Stressor-Related Disorder</option>
+                            <option value="38">Unspecified Mental Disorder</option>
+                            <option value="39">Unspecified Substance-Related Disorder</option>
+                            <option value="40">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Date Of Diagnosis 2</td><td><input id="DateOfDiagnosis2" type="text" class="isDatePicker "></td></tr>
+                <tr>
+                    <td>Diagnosis 3</td>
+                    <td>
+                        <select id="Diagnosis3" class="isEdittable  isSmallField">
+                            <option value=""></option>
+                            <option value="1">Alcohol-Related Disorder</option>
+                            <option value="2">Anxiety Disorder</option>
+                            <option value="3">Attention-Deficit/Hyperactivity Disorder</option>
+                            <option value="4">Autism Spectrum Disorder</option>
+                            <option value="5">Bipolar and Related Disorder</option>
+                            <option value="6">Caffeine-Related Disorder</option>
+                            <option value="7">Cannabis-Related Disorder</option>
+                            <option value="8">Communication Disorder</option>
+                            <option value="9">Delirium Disorder</option>
+                            <option value="10">Depressive Disorder</option>
+                            <option value="11">Disruptive, Impulse-Control, and Conduct Disorder</option>
+                            <option value="12">Dissociative Disorder</option>
+                            <option value="13">Eating Disorder</option>
+                            <option value="14">Elimination Disorder</option>
+                            <option value="15">Gender Dysphoria Personality Disorder</option>
+                            <option value="16">Hallucinogen-Related Disorder</option>
+                            <option value="17">Inhalant-Related Disorder</option>
+                            <option value="18">Intellectual Disability </option>
+                            <option value="19">Medication-Induced Movement and Other Disorder</option>
+                            <option value="20">Motor Disorder</option>
+                            <option value="21">Neurocognitive Disorder</option>
+                            <option value="22">Non-Substance-Related Disorder</option>
+                            <option value="23">Obsessive-Compulsive or Related Disorder</option>
+                            <option value="24">Opioid-Related Disorder</option>
+                            <option value="25">Other Mental Disorder</option>
+                            <option value="26">Other Neurodevelopmental Disorder</option>
+                            <option value="27">Paraphilic Disorder</option>
+                            <option value="28">Personality Disorder</option>
+                            <option value="29">Schizophrenia Spectrum or Other Psychotic Disorder</option>
+                            <option value="30">Sedative-, Hypnotic-, or Anxiolytic-Related Disorder</option>
+                            <option value="31">Sexual Dysfunction </option>
+                            <option value="32">Sleep Disorder</option>
+                            <option value="33">Somatic Symptom or Related Disorder</option>
+                            <option value="34">Specific Learning Disorder</option>
+                            <option value="35">Stimulant-Related Disorder</option>
+                            <option value="36">Tobacco-Related Disorder</option>
+                            <option value="37">Trauma- or Stressor-Related Disorder</option>
+                            <option value="38">Unspecified Mental Disorder</option>
+                            <option value="39">Unspecified Substance-Related Disorder</option>
+                            <option value="40">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Date Of Diagnosis 3</td><td><input id="DateOfDiagnosis3" type="text" class="isDatePicker "></td></tr>
+                <tr><td>Symptoms</td><td><textarea id="Symptoms" class="isEdittable isLargeField isRequired"></textarea></td></tr>
+
+                <tr><td class="SubSection">Medication</td><td /></tr>
+                <tr><td>Taking Any Medication ?</td><td><input id="TakingAnyMedication" type="checkbox" class="isEdittable isRequired"> </td></tr>
+                <tr><td>Medications</td><td><textarea id="Medications" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Side Effects</td><td><textarea id="SideEffects" class="isEdittable isLargeField"></textarea></td></tr>
+
+                <tr><td class="SubSection">Allergies</td><td /></tr>
+                <tr><td>Allergic To Anything ?</td><td><input id="AllergicToAnything" type="checkbox" class="isEdittable isRequired"> </td></tr>
+                <tr><td>Allergic To What ?</td><td><textarea id="AllergicToWhat" class="isEdittable isLargeField"></textarea></td></tr>
+            
+
+            </table>
+        </fieldset>
+
+
+
+        <!--************************************************************************-->
+        <!--Section Template                                                        -->
+        <!--************************************************************************-->
+
+        <fieldset class="fieldsetAddEdit">
+            <legend>SECTION_TEMPLATE</legend>
+
+            <table ID="tbl_TABLE_ID" class="tableMaintain">
+
+                <tr><td class="SubSection">SUBSECTION</td><td /></tr>
+                <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
+                <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
+                <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="DATE_TIME_PICKER_ID" type="text" class="isDateTimePicker isSmallField"></td></tr>
+                <tr><td>CHECKBOX_LABEL</td><td><input id="CHECKBOX_ID" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>PHONENUMBER_LABEL</td><td><input id="PHONENUMBER_ID" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+
+
+            </table>
+        </fieldset>
+
+
+
 
 
     </div>
