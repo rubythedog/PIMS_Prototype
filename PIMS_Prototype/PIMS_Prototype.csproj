@@ -67,56 +67,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\command_branch\create_and_switch.html" />
-    <Content Include="content\command_branch\delete.html" />
-    <Content Include="content\command_create_repository\clone.html" />
-    <Content Include="content\command_make_change\remove.html" />
-    <Content Include="content\command_undo_change\revert.html" />
-    <Content Include="content\command_undo_change\restore.html" />
-    <Content Include="content\command_other\status.html" />
-    <Content Include="content\command_undo_change\clean.html" />
-    <Content Include="content\command_undo_change\reset.html" />
-    <Content Include="content\command_make_change\commit.html" />
-    <Content Include="content\command_make_change\add.html" />
-    <Content Include="content\command_synchronize_change\push.html" />
-    <Content Include="content\command_synchronize_change\pull.html" />
-    <Content Include="content\getting_started\git_for_windows.html" />
-    <Content Include="content\GitFlow\GitFlow_visualworkflow.html" />
-    <Content Include="content\GitFlow\GitFlow_commands.html" />
-    <Content Include="content\GitFlow.html" />
-    <Content Include="content\howdoi.html" />
-    <Content Include="content\how_do_i\file_history.html" />
-    <Content Include="content\how_do_i\get_status.html" />
-    <Content Include="content\how_do_i\chain_commands_in_powershell.html" />
     <Content Include="fonts\readme.txt" />
-    <Content Include="content\how_do_i\create_a_local_repository.html" />
-    <Content Include="content\how_do_i\get_latest.html" />
-    <Content Include="content\how_do_i\merge_branches.html" />
-    <Content Include="content\how_do_i\undo_changes.html" />
-    <Content Include="content\how_do_i\add_to_commit.html" />
-    <Content Include="content\how_do_i\resolve_merge_conflicts.html" />
-    <Content Include="content\how_do_i\prune_orphan_branches.html" />
-    <Content Include="content\how_do_i\check_in.html" />
-    <Content Include="images\getting_started\git_for_windows_options1.png" />
-    <Content Include="images\getting_started\git_for_windows_options2.png" />
-    <Content Include="images\getting_started\git_for_windows_options3.png" />
-    <Content Include="content\remote_actions.html" />
-    <Content Include="images\FAQ\Ruby_Avitar.jpg" />
     <Content Include="images\ProsperPlace_Logo.png" />
     <Content Include="images\ProsperPlace_Logo2.png" />
-    <Content Include="images\welcome\git_branching-illustration%402x.png" />
-    <Content Include="images\welcome\git_isometric-grid.png" />
-    <Content Include="images\welcome\git_logo%402x.png" />
     <Content Include="packages.config" />
-    <Content Include="content\glossary.html" />
-    <Content Include="images\gitflow\GitFlowDevelopBranch.png" />
-    <Content Include="images\gitflow\GitFlowFeatureBranches.png" />
-    <Content Include="images\gitflow\GitFlowHotfixBranch.png" />
-    <Content Include="images\gitflow\GitFlowMasterBranch.png" />
-    <Content Include="images\gitflow\GitFlowReleaseBranch.png" />
-    <Content Include="content\remote_actions\create_new_branch.html" />
-    <Content Include="content\remote_actions\create_new_repository.html" />
-    <Content Include="content\remote_actions\merge_branches.html" />
     <Content Include="scripts\daterangepicker.js" />
     <Content Include="scripts\jquery-3.2.1.js" />
     <Content Include="scripts\jquery-input-mask-phone-number.js" />
@@ -153,21 +107,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="powershell\template.ps1" />
-    <Content Include="powershell\template_call.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\about.html" />
-    <Content Include="content\command_branch\create.html" />
-    <Content Include="content\command_branch\switch.html" />
-    <Content Include="content\faq.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="content\gettingstarted.html" />
     <Content Include="home.html" />
-    <Content Include="images\FAQ\Ruby.jpg" />
     <Content Include="index.html" />
-    <Content Include="content\command_synchronize_change\rebase.html" />
-    <Content Include="content\resources.html" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\PIMS_Prototype.js" />
@@ -175,8 +120,6 @@
     <Content Include="styles\font-awesome.min.css" />
     <Content Include="styles\google_fonts.css" />
     <Content Include="styles\PIMS_Prototype_navbar.css" />
-    <Content Include="styles\PIMS_Prototype_local_doc_styles.css" />
-    <Content Include="content\git_commands.html" />
     <Content Include="styles\Site.css" />
     <Content Include="Web.config" />
     <Content Include="content\MaintainMember.html" />

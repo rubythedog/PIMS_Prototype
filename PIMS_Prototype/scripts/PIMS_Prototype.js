@@ -4,52 +4,24 @@ function Create_Menu_HTML() {
 	str +="<ul class=\"navbar-nav\">";
 
 	str += "<li class=\"nav-item dropdown\">";
-	str +="<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Home</a>";
+    str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Home</a>";
 	str +="<div class=\"dropdown-menu\">";
-    str +="<a class=\"dropdown-item\" href=\"content\\welcome.html\">Welcome</a>";
     str +="<a class=\"dropdown-item\" href=\"content\\about.html\">About</a>";
 	str +="</div>";
-	str +="</li>";
+    str += "</li>";
 
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\gettingstarted.html\" >Getting Started</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\howdoi.html\" >How Do I...</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\git_commands.html\" >Git Commands</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\remote_actions.html\" >Remote Actions (TFS)</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\resources.html\" >Resources</a></li>";
+    str += "<li class=\"nav-item dropdown\">";
+    str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Member</a>";
+    str += "<div class=\"dropdown-menu\">";
+    str += "<a class=\"dropdown-item\" href=\"content\\MaintainMember.html\">Maintain Member</a>";
+    str += "</div>";
+    str += "</li>";
 
-	str += "<li class=\"nav-item dropdown\">";
-	str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">GitFlow</a>";
-	str += "<div class=\"dropdown-menu\">";
-    str += "<a class=\"dropdown-item\" href=\"content\\GitFlow.html\">Overview</a>";
-	str += "<a class=\"dropdown-item\" href=\"content\\gitflow\\GitFlow_commands.html\">Commands</a>";
-	str += "<a class=\"dropdown-item\" href=\"content\\gitflow\\GitFlow_visualworkflow.html\">Visual Workflow</a>";
-	str += "</div>";
-	str += "</li>";
-    
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\glossary.html\" >Glossary</a></li>";
-    str += "<li class=\"nav-item\"><a class=\"nav-link\" href=\"content\\faq.html\" >FAQ</a></li>";
 	str +="</ul>";
 	str +="</nav>";
 	return str;
 }
 
-function Create_CopyInTable_HTML() {
-    var str = "";
-    str +="<i class=\"copy_in_table fa fa-copy\" style=\"font-size:24px\" title=\"Copy command\"/>";
-    return str;
-}
-
-function Create_CopyInCommand_HTML() {
-    var str = "";
-    str += "&nbsp;&nbsp;&nbsp;&nbsp;<i class=\"copy_in_command fa fa-copy\" style=\"font-size:24px\" title=\"Copy command\"/>";
-    return str;
-}
-
-function Create_Glossary_HTML() {
-    var str = "";
-    str += "<a href=\"https://git.github.io/htmldocs/user-manual.html#def\" >display</a>";
-    return str;
-}
 
 //******************************************************************************************
 // UI Initializers
@@ -161,29 +133,6 @@ function UIInitialize_PhoneNumberField_PlugIn() {
 function UIInitialize_AlbertaHealthCare_PlugIn() {
     //not a phone number, but can use this validator since ANC is all numbers
     $(".isAHC").AHC_Number();
-}
-
-
-function UIInitialize_Glossary() {
-    //<span class = "glossary_def" title="def=def_fast_forward;display=fast-forward"> </span>
-    //<a href="https://git.github.io/htmldocs/user-manual.html#def_fast_forward" >fast-forward</a>
-
-    var strGlossary = Create_Glossary_HTML();
-    $(".glossary_def").each(function () {
-        var thisID = $(this);
-        var title = thisID.attr("title");
-        var def = title.split(";")[0].split("=")[1];
-        var display = title.split(";")[1].split("=")[1];
-        var str = strGlossary;
-        str = str.replace("def", def);
-        str = str.replace("display", display);
-        thisID.html(str);
-        thisID.removeAttr("title");
-    });
-}
-
-function UIInitialize_HideDivs() {
-    $(".DivIsInitiallyHidden").css("display", "none");
 }
 
 
