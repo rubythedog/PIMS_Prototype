@@ -63,6 +63,7 @@ function UIInitialize_BasePage() {
     UIInitialize_BasePageMenu();
     UIInitialize_InsertRequiredAsterisk();
     UIInitialize_DateTimePickers();
+    UIInitialize_PhoneNumberFields();
     UIInitialize_HideDivs();
 }
 
@@ -145,6 +146,13 @@ function UIInitialize_DateTimePickers() {
     $(".isDatePicker").on("apply.daterangepicker", function (ev, picker) {
         $(this).val(picker.startDate.format("MMMM DD, YYYY"));
     });
+}
+
+function UIInitialize_PhoneNumberFields() {
+    $(".isPhoneNumber").usPhoneFormat({
+        format: "(xxx) xxx-xxxx"
+    });
+
 }
 
 

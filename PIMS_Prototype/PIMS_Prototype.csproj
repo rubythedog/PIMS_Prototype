@@ -119,6 +119,7 @@
     <Content Include="content\remote_actions\merge_branches.html" />
     <Content Include="scripts\daterangepicker.js" />
     <Content Include="scripts\jquery-3.2.1.js" />
+    <Content Include="scripts\jquery-input-mask-phone-number.js" />
     <Content Include="scripts\moment.min.js" />
     <Content Include="scripts\umd\popper-utils.js" />
     <Content Include="scripts\umd\popper-utils.min.js" />
