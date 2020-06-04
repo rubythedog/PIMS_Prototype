@@ -62,9 +62,13 @@ function Create_Glossary_HTML() {
 function UIInitialize_BasePage() {
     UIInitialize_BasePageMenu();
     UIInitialize_InsertRequiredAsterisk();
-    UIInitialize_DateTimePickers();
-    UIInitialize_PhoneNumberFields();
-    UIInitialize_HideDivs();
+    UIInitialize_PlugIns();
+}
+
+function UIInitialize_PlugIns() {
+    UIInitialize_DateTimePickers_PlugIn();
+    UIInitialize_PhoneNumberField_PlugIn();
+    UIInitialize_AlbertaHealthCare_PlugIn();
 }
 
 function UIInitialize_SubFolderPage() {
@@ -113,7 +117,7 @@ function UIInitialize_InsertRequiredAsterisk() {
     });
 }
 
-function UIInitialize_DateTimePickers() {
+function UIInitialize_DateTimePickers_PlugIn() {
     ////http://www.daterangepicker.com/
 
     $(".isDateTimePicker").daterangepicker({
@@ -148,11 +152,15 @@ function UIInitialize_DateTimePickers() {
     });
 }
 
-function UIInitialize_PhoneNumberFields() {
+function UIInitialize_PhoneNumberField_PlugIn() {
     $(".isPhoneNumber").usPhoneFormat({
         format: "(xxx) xxx-xxxx"
     });
+}
 
+function UIInitialize_AlbertaHealthCare_PlugIn() {
+    //not a phone number, but can use this validator since ANC is all numbers
+    $(".isAHC").AHC_Number();
 }
 
 
@@ -183,100 +191,49 @@ function UIInitialize_HideDivs() {
 //******************************************************************************************
 // Event Handlers
 //******************************************************************************************
-function EventHandler_AccordionClick() {
-    var iconClassName;
-    //open and close the accordions
-    $('.accordion')
-        .find('.accordion-toggle')
-        .click(function () {
-            //Expand or collapse this panel
-            var thisID = $(this);
-
-            var chevronIcon = thisID[0].childNodes[1].childNodes[0];
-            if (chevronIcon.tagName == "I" && chevronIcon.classList[0] == "fa") {
-                iconClassName = chevronIcon.classList[1];
-                if (iconClassName == "fa-angle-double-down")
-                    $(chevronIcon).toggleClass("fa-angle-double-down fa-angle-double-right");
-                else
-                    $(chevronIcon).toggleClass("fa-angle-double-right fa-angle-double-down");
-            }
-            var nextID = thisID.next();
-            nextID.slideToggle('fast');
-        });
-}
-
-function EventHandler_CopyClick() {
-    $('.copy_in_table.fa-copy').click(function () {
-        var thisID = $(this);
-        var target = thisID[0].parentElement.parentElement.previousSibling;
-        copyToClipboard(target);
-        }
-    );
-
-    $('.copy_in_command.fa-copy').click(function () {
-            var thisID = $(this);
-            var target = thisID[0].parentElement.previousSibling;
-            copyToClipboard(target);
-        }
-    );
-}
-
-
 function EventHandlers_Register() {
-
-    EventHandler_AccordionClick();
-    EventHandler_CopyClick();
+    //nothing at this time
 }
 
 
-//https://stackoverflow.com/questions/22581345/click-button-copy-to-clipboard-using-jquery
-function copyToClipboard(elem) {
-    // create hidden text element, if it doesn't already exist
-    var targetId = "_hiddenCopyText_";
-    var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
-    var origSelectionStart, origSelectionEnd;
-    if (isInput) {
-        // can just use the original source element for the selection and copy
-        target = elem;
-        origSelectionStart = elem.selectionStart;
-        origSelectionEnd = elem.selectionEnd;
-    } else {
-        // must use a temporary form element for the selection and copy
-        target = document.getElementById(targetId);
-        if (!target) {
-            var target = document.createElement("textarea");
-            target.style.position = "absolute";
-            target.style.left = "-9999px";
-            target.style.top = "0";
+//******************************************************************************************
+// jQuery Extensions
+//******************************************************************************************
+(function ($) {
+   
+    $.fn.AHC_Number = function (options) {
+        var params = $.extend({
+            format: 'xxxxx-xxxx'
+        }, options);
+        $(this).bind('paste', function (e) {
+            e.preventDefault();
+            var inputValue = e.originalEvent.clipboardData.getData('Text');
+            if (!$.isNumeric(inputValue)) {
+                return false;
+            } else {
+                inputValue = String(inputValue.replace(/(\d{5})(\d{4})/, "$1-$2"));
+                $(this).val(inputValue);
+                $(this).val('');
+                inputValue = inputValue.substring(0, 10);
+                $(this).val(inputValue);
+            }
+        });
+        $(this).on('keydown touchend', function (e) {
+            if (e.shiftKey) {
+                return false;
+            }
+            if (e.which != 8 && e.which != 0 && !(e.which >= 48 && e.which <= 57) && !(e.which >= 96 && e.which <= 105)   ){
+                return false;
+            }
+            var curchr = this.value.length;
+            var curval = $(this).val();
+            if (curchr == 5 && e.which != 8 && e.which != 0) {
+                $(this).val(curval + "-");
+            }
+            $(this).attr('maxlength', '10');
+        });
 
-            target.id = targetId;
-            document.body.appendChild(target);
-        }
-        target.textcontent = elem.textcontent;
-    }
-    // select the content
-    var currentFocus = document.activeElement;
-    target.focus();
-    target.setSelectionRange(0, target.value.length);
 
-    // copy the selection
-    var succeed;
-    try {
-        succeed = document.execCommand("copy");
-    } catch (e) {
-        succeed = false;
-    }
-    // restore original focus
-    if (currentFocus && typeof currentFocus.focus === "function") {
-        currentFocus.focus();
     }
 
-    if (isInput) {
-        // restore prior selection
-        elem.setSelectionRange(origSelectionStart, origSelectionEnd);
-    } else {
-        // clear temporary content
-        target.textcontent = "";
-    }
-    return succeed;
-}
+}(jQuery));

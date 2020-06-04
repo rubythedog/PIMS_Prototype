@@ -24,7 +24,6 @@
 
     <script src="../scripts/jquery-input-mask-phone-number.js"></script>
     <!--https://www.jqueryscript.net/form/jQuery-Input-Mask-Phone-Numbers.html-->
-    <!--I switched from this project to date range picker, you can set singleDatePicker as true, then it works like a datetimepicker.-->
 
 
     <script type="text/javascript">
@@ -56,7 +55,7 @@
             <table ID="tbl_TABLE_ID" class="tableMaintain">
 
                 <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
-                <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
                 <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
                 <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
                 <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker"></td></tr>
@@ -77,9 +76,9 @@
 
             <table ID="tblMemberInformation" class="tableMaintain">
 
-                <tr><td>First Name</td><td><input id="FirstName" type="text" value="" class="isEdittable isSmallField isRequired"></td></tr>
-                <tr><td>Middle Name</td><td><input id="MiddleName" type="text" value="" class="isEdittable isSmallField"></td></tr>
-                <tr><td>Last Name</td><td><input id="LastName" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>First Name</td><td><input id="FirstName" type="text" class="isEdittable isSmallField isRequired"></td></tr>
+                <tr><td>Middle Name</td><td><input id="MiddleName" type="text" class="isEdittable isSmallField"></td></tr>
+                <tr><td>Last Name</td><td><input id="LastName" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
                 <tr>
                     <td>Gender</td>
                     <td>
@@ -123,8 +122,8 @@
                 <tr><td>Living Facility Name</td><td><textarea id="LivingFacilityName" class="isEdittable isLargeField"></textarea></td></tr>
                 <tr><td>Supportive Living Where</td><td><textarea id="SupportiveLivingWhere" class="isEdittable isLargeField"></textarea></td></tr>
                 <tr><td>Facility Living Where</td><td><textarea id="FacilityLivingWhere" class="isEdittable isLargeField"></textarea></td></tr>
-                <tr><td>Suite / Unit #</td><td><input id="Suite_Unit" type="text" value="" class="isEdittable isSmallField "> </td></tr>
-                <tr><td>House #</td><td><input id="House_Number" type="text" value="" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Suite / Unit #</td><td><input id="Suite_Unit" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>House #</td><td><input id="House_Number" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr><td>Address</td><td><textarea id="Address" class="isEdittable isLargeField isRequired"></textarea></td></tr>
                 <tr>
                     <td>Quadrant</td>
@@ -161,8 +160,8 @@
                         </select>
                     </td>
                 </tr>
-                <tr><td>Country</td><td><input id="Country" type="text" value="" class="isEdittable isSmallField isRequired"> </td></tr>
-                <tr><td>Postal Code</td><td><input id="PostalCode" type="text" value="" class="isEdittable isSmallField"> </td></tr>
+                <tr><td>Country</td><td><input id="Country" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>Postal Code</td><td><input id="PostalCode" type="text" class="isEdittable isSmallField"> </td></tr>
                 
             </table>
         </fieldset>
@@ -175,10 +174,10 @@
 
             <table ID="tblContactDetails" class="tableMaintain">
                 
-                <tr><td>Home Phone</td><td><input id="Home_Phone" type="text" value="" class="isEdittable isSmallField "> </td></tr>
-                <tr><td>Cell Phone</td><td><input id="Cel_Phone" type="text" value="" class="isEdittable isSmallField "> </td></tr>
-                <tr><td>E-Mail Address</td><td><input id="EMailAddress" type="text" value="" class="isEdittable isSmallField "> </td></tr>
-                <tr><td>Wants Newsletter E-mailed?</td><td><input id="WantsNewsletterEmailed" type="checkbox" value="" class="isEdittable isRequired"> </td></tr>
+                <tr><td>Home Phone</td><td><input id="Home_Phone" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Cell Phone</td><td><input id="Cel_Phone" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>E-Mail Address</td><td><input id="EMailAddress" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Wants Newsletter E-mailed?</td><td><input id="WantsNewsletterEmailed" type="checkbox" class="isEdittable isRequired"> </td></tr>
 
             </table>
         </fieldset>
@@ -189,11 +188,13 @@
         <fieldset class="fieldsetAddEdit">
             <legend>Emergency Contacts</legend>
 
-            <table ID="tblContactDetails" class="tableMaintain">
+            <table ID="tblContact1" class="tableMaintain">
 
-                <tr><td>First Name</td><td><input id="Contact1_HomePhone" type="text" value="" class="isEdittable isSmallField "> </td></tr>
-                <tr><td>Middle Name</td><td><input id="Contact1_MiddleName" type="text" value="" class="isEdittable isSmallField "> </td></tr>
-                <tr><td>Last Name</td><td><input id="Contact1_LastName" type="text" value="" class="isEdittable isSmallField "> </td></tr>
+                <tr><td class="SubSection">Contact One</td><td /></tr>
+
+                <tr><td>First Name</td><td><input id="Contact1_HomePhone" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Middle Name</td><td><input id="Contact1_MiddleName" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Last Name</td><td><input id="Contact1_LastName" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr>
                     <td>Relationship</td>
                     <td>
@@ -235,9 +236,119 @@
                     </td>
                 </tr>
 
-                <tr><td>Home Phone</td><td><input id="Contact1_HomePhone" type="text" value="" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
-                <tr><td>Cell Phone</td><td><input id="Contact1_CellPhone" type="text" value="" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+                <tr><td>Home Phone</td><td><input id="Contact1_HomePhone" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+                <tr><td>Cell Phone</td><td><input id="Contact1_CellPhone" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
                 <!--https://igorescobar.github.io/jQuery-Mask-Plugin/-->
+
+            </table>
+
+            <table ID="tblContact2" class="tableMaintain">
+
+                <tr><td class="SubSection">Contact Two</td><td /></tr>
+
+                <tr><td>First Name</td><td><input id="Contact2_HomePhone" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Middle Name</td><td><input id="Contact2_MiddleName" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Last Name</td><td><input id="Contact2_LastName" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr>
+                    <td>Relationship</td>
+                    <td>
+                        <select id="Contact2_ContactRelationship" class="isEdittable isSmallField">
+                            <option value=""></option>
+                            <option value="1">Father</option>
+                            <option value="2">Mother</option>
+                            <option value="3">Son</option>
+                            <option value="4">Daughter</option>
+                            <option value="5">Son-In-law</option>
+                            <option value="6">Daughter-In-law</option>
+                            <option value="7">Brother</option>
+                            <option value="8">Sister</option>
+                            <option value="9">Spouse</option>
+                            <option value="10">Ex-Spouse</option>
+                            <option value="11">Grandfather</option>
+                            <option value="12">Grandmother</option>
+                            <option value="13">Stepfather</option>
+                            <option value="14">Stepmother</option>
+                            <option value="15">Uncle</option>
+                            <option value="16">Aunt</option>
+                            <option value="17">Nephew</option>
+                            <option value="18">Niece</option>
+                            <option value="19">Friend</option>
+                            <option value="20">Nurse</option>
+                            <option value="21">Doctor</option>
+                            <option value="22">Occupational Therapist</option>
+                            <option value="23">Psychiatrist</option>
+                            <option value="24">Support Home Operator</option>
+                            <option value="25">Support Worker</option>
+                            <option value="26">Therapist</option>
+                            <option value="27">Roommate</option>
+                            <option value="28">Street brother</option>
+                            <option value="29">Group / Agency Staff</option>
+                            <option value="30">Mental Health Therapist</option>
+                            <option value="31">Case Manager</option>
+                            <option value="32">Community Resource Worker</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Home Phone</td><td><input id="Contact2_HomePhone" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+                <tr><td>Cell Phone</td><td><input id="Contact2_CellPhone" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+                <!--https://igorescobar.github.io/jQuery-Mask-Plugin/-->
+
+            </table>
+
+            <table ID="tblContact_LegalGuardian" class="tableMaintain">
+
+                <tr><td class="SubSection">Legal Guardian</td><td /></tr>
+
+                <tr><td>First Name</td><td><input id="Contact_LegalGuardian_HomePhone" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Middle Name</td><td><input id="Contact_LegalGuardian_MiddleName" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>Last Name</td><td><input id="Contact_LegalGuardian_LastName" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr>
+                    <td>Relationship</td>
+                    <td>
+                        <select id="Contact_LegalGuardian_ContactRelationship" class="isEdittable isSmallField">
+                            <option value=""></option>
+                            <option value="1">Father</option>
+                            <option value="2">Mother</option>
+                            <option value="3">Son</option>
+                            <option value="4">Daughter</option>
+                            <option value="5">Son-In-law</option>
+                            <option value="6">Daughter-In-law</option>
+                            <option value="7">Brother</option>
+                            <option value="8">Sister</option>
+                            <option value="9">Spouse</option>
+                            <option value="10">Ex-Spouse</option>
+                            <option value="11">Grandfather</option>
+                            <option value="12">Grandmother</option>
+                            <option value="13">Stepfather</option>
+                            <option value="14">Stepmother</option>
+                            <option value="15">Uncle</option>
+                            <option value="16">Aunt</option>
+                            <option value="17">Nephew</option>
+                            <option value="18">Niece</option>
+                            <option value="19">Friend</option>
+                            <option value="20">Nurse</option>
+                            <option value="21">Doctor</option>
+                            <option value="22">Occupational Therapist</option>
+                            <option value="23">Psychiatrist</option>
+                            <option value="24">Support Home Operator</option>
+                            <option value="25">Support Worker</option>
+                            <option value="26">Therapist</option>
+                            <option value="27">Roommate</option>
+                            <option value="28">Street brother</option>
+                            <option value="29">Group / Agency Staff</option>
+                            <option value="30">Mental Health Therapist</option>
+                            <option value="31">Case Manager</option>
+                            <option value="32">Community Resource Worker</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Home Phone</td><td><input id="Contact_LegalGuardian_HomePhone" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+                <tr><td>Cell Phone</td><td><input id="Contact_LegalGuardian_CellPhone" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+                <!--https://igorescobar.github.io/jQuery-Mask-Plugin/-->
+
+                <tr><td>Alberta Health Care Number</td><td><input id="AlbertaHealthCareNumber" type="text" class="isEdittable isSmallField isAHC"> </td></tr>
 
             </table>
         </fieldset>

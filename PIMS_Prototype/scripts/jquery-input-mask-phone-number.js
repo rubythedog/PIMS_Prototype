@@ -31,7 +31,7 @@
                 }
             });
             $(this).on('keydown touchend', function (e) {
-                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                if (e.which != 8 && e.which != 0 && !(e.which >= 48 && e.which <= 57) && !(e.which >= 96 && e.which <= 105)) {
                     return false;
                 }
                 var curchr = this.value.length;
@@ -46,7 +46,7 @@
 
         } else if (params.format === '(xxx) xxx-xxxx') {
             $(this).on('keydown touchend', function (e) {
-                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                if (e.which != 8 && e.which != 0 && !(e.which >= 48 && e.which <= 57) && !(e.which >= 96 && e.which <= 105)) {
                     return false;
                 }
                 var curchr = this.value.length;

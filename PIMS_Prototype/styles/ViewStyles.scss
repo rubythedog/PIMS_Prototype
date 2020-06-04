@@ -128,6 +128,19 @@ $pageWidth:1000px;
 /*Maintain View
 /************************************************************************/
 
+@mixin FirstTD($alignment) {
+    text-align: $alignment;
+    width: 40%;
+}
+
+$MaintainViewFieldWidth: 100%;
+
+/*you need at least 1 property to ensure a class is created*/
+/*by creating a class, you can have the class show up in intellisense*/ 
+@mixin DummyStyle {
+    background: white;
+}
+
 .tableMaintain {
     width: 100%;
     border: none;
@@ -136,49 +149,49 @@ $pageWidth:1000px;
     font-family: $font;
 
     td:first-child {
-        width: 40%;
-        text-align: right
+        @include FirstTD(right);
+    }
+
+    td:first-child.SubSection {
+        @include FirstTD(left);
+        text-decoration: underline;
     }
 
     td:nth-child(2) {
-        width: 1px;
-        padding-left: 0px;
-        padding-right: 0px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    td:nth-child(3) {
         width: 60%;
     }
 
-    .isEdittable {
-        background: white;
-    }
-
     .isSmallField {
-        width: 100%;
+        width: $MaintainViewFieldWidth;
     }
 
     .isLargeField {
-        width: 100%;
+        width: $MaintainViewFieldWidth;
         height: 80px;
+    }
+    /*classes for formating and validationby. creating a class, you can have the class show up in intellisense*/
+    .isEdittable {
+        @include DummyStyle;
     }
 
     .isRequired {
-        background: white;
+        @include DummyStyle;
     }
 
     .isDateTimePicker {
-        background: white;
+        @include DummyStyle;
     }
 
     .isDatePicker {
-        background: white;
+        @include DummyStyle;
     }
 
     .isPhoneNumber {
-        background: white;
+        @include DummyStyle;
+    }
+
+    .isAHC {
+        @include DummyStyle;
     }
 }
 
