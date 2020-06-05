@@ -159,7 +159,7 @@
                 <tr><td>Home Phone</td><td><input id="Home_Phone" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr><td>Cell Phone</td><td><input id="Cel_Phone" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr><td>E-Mail Address</td><td><input id="EMailAddress" type="text" class="isEdittable isSmallField "> </td></tr>
-                <tr><td>Wants Newsletter E-mailed?</td><td><input id="WantsNewsletterEmailed" type="checkbox" class="isEdittable isRequired"> </td></tr>
+                <tr><td>Wants Newsletter E-mailed ?</td><td><input id="WantsNewsletterEmailed" type="checkbox" class="isEdittable isRequired"> </td></tr>
 
             </table>
         </fieldset>
@@ -172,6 +172,9 @@
 
             <table ID="tblContact1" class="tableMaintain">
 
+                <!--************************************************************************-->
+                <!--SubSection Contact One                                                  -->
+                <!--************************************************************************-->
                 <tr><td class="SubSection">Contact One</td><td /></tr>
 
                 <tr><td>First Name</td><td><input id="Contact1_HomePhone" type="text" class="isEdittable isSmallField "> </td></tr>
@@ -226,6 +229,9 @@
 
             <table ID="tblContact2" class="tableMaintain">
 
+                <!--************************************************************************-->
+                <!--SubSection Contact Two                                                  -->
+                <!--************************************************************************-->
                 <tr><td class="SubSection">Contact Two</td><td /></tr>
 
                 <tr><td>First Name</td><td><input id="Contact2_HomePhone" type="text" class="isEdittable isSmallField "> </td></tr>
@@ -280,6 +286,9 @@
 
             <table ID="tblContact_LegalGuardian" class="tableMaintain">
 
+                <!--************************************************************************-->
+                <!--SubSection Legal Guardian                                                 -->
+                <!--************************************************************************-->
                 <tr><td class="SubSection">Legal Guardian</td><td /></tr>
 
                 <tr><td>First Name</td><td><input id="Contact_LegalGuardian_HomePhone" type="text" class="isEdittable isSmallField "> </td></tr>
@@ -455,6 +464,9 @@
 
             <table ID="tblMemberInformation" class="tableMaintain">
 
+                <!--************************************************************************-->
+                <!--SubSection Diagnosis                                                  -->
+                <!--************************************************************************-->
                 <tr><td class="SubSection">Diagnosis</td><td /></tr>
 
                 <tr>
@@ -683,15 +695,84 @@
                 <tr><td>Date Of Diagnosis 3</td><td><input id="DateOfDiagnosis3" type="text" class="isDatePicker "></td></tr>
                 <tr><td>Symptoms</td><td><textarea id="Symptoms" class="isEdittable isLargeField isRequired"></textarea></td></tr>
 
+                <!--************************************************************************-->
+                <!--SubSection Medication                                                  -->
+                <!--************************************************************************-->
                 <tr><td class="SubSection">Medication</td><td /></tr>
                 <tr><td>Taking Any Medication ?</td><td><input id="TakingAnyMedication" type="checkbox" class="isEdittable isRequired"> </td></tr>
                 <tr><td>Medications</td><td><textarea id="Medications" class="isEdittable isLargeField"></textarea></td></tr>
                 <tr><td>Side Effects</td><td><textarea id="SideEffects" class="isEdittable isLargeField"></textarea></td></tr>
 
+                <!--************************************************************************-->
+                <!--SubSection Alergies                                                  -->
+                <!--************************************************************************-->
                 <tr><td class="SubSection">Allergies</td><td /></tr>
                 <tr><td>Allergic To Anything ?</td><td><input id="AllergicToAnything" type="checkbox" class="isEdittable isRequired"> </td></tr>
                 <tr><td>Allergic To What ?</td><td><textarea id="AllergicToWhat" class="isEdittable isLargeField"></textarea></td></tr>
-            
+
+                <!--************************************************************************-->
+                <!--SubSection Addiction                                                     -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Addiction</td><td /></tr>
+
+                <tr>
+                    <td>Addiction</td>
+                    <td>
+                        <select id="Addiction" class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Alochol</option>
+                            <option value="2">Binge Drinking</option>
+                            <option value="3">Cigarettes / Tobacco</option>
+                            <option value="4">Cocaine / Crack</option>
+                            <option value="5">Cough Syrup</option>
+                            <option value="6">Eating / Food</option>
+                            <option value="7">GHP</option>
+                            <option value="8">Gambling</option>
+                            <option value="9">Hand Sanitizer</option>
+                            <option value="10">Heroin</option>
+                            <option value="11">LSD</option>
+                            <option value="12">Marijuana</option>
+                            <option value="13">Methamphetamine / Crystal Meth</option>
+                            <option value="14">Mushrooms</option>
+                            <option value="15">Painkillers</option>
+                            <option value="16">Pornography</option>
+                            <option value="17">Vaping</option>
+                            <option value="18">Windshield Wiper Fluid</option>
+                            <option value="19">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td>Start Date</td><td><input id="Addiction_StartDate" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>End Date</td><td><input id="Addiction_EndDate" type="text" class="isDatePicker isSmallField"></td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Other / Hospitalization                                      -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Other / Hospitalization</td><td /></tr>
+
+                <tr><td>Other Medical Conditions</td><td><textarea id="OtherMedicalConditions" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Has Been Hospitalized ?</td><td><input id="HasBeenHospitalized" type="checkbox" class="isEdittable isRequired"> </td></tr>
+                <tr><td>Date Of Last Hospitalization</td><td><input id="DateOfLastHospitilization" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>Reason for Hospitalization</td><td><textarea id="ReasonForHospitalization" class="isEdittable isLargeField"></textarea></td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Suicide                                      -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Other / Hospitalization</td><td /></tr>
+
+            <tr><td>Attempted Suicide ?</td><td><input id="AttemptedSuicide" type="checkbox" class="isEdittable isRequired"> </td></tr>
+            <tr><td>Thoughts of Suicide ?</td><td><textarea id="ThoughtsOfSuicide" class="isEdittable isLargeField"></textarea></td></tr>
+            <tr><td>Suicide Notes</td><td><textarea id="SuicideNotes" class="isEdittable isLargeField"></textarea></td></tr>
+
+            <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
+                <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
+                <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="DATE_TIME_PICKER_ID" type="text" class="isDateTimePicker isSmallField"></td></tr>
+                <tr><td>CHECKBOX_LABEL</td><td><input id="CHECKBOX_ID" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>PHONENUMBER_LABEL</td><td><input id="PHONENUMBER_ID" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+
 
             </table>
         </fieldset>
@@ -707,7 +788,11 @@
 
             <table ID="tbl_TABLE_ID" class="tableMaintain">
 
+                <!--************************************************************************-->
+                <!--SubSection Template                                                     -->
+                <!--************************************************************************-->
                 <tr><td class="SubSection">SUBSECTION</td><td /></tr>
+
                 <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
                 <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
                 <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
