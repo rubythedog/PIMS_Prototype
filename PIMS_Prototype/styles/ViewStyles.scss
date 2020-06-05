@@ -63,6 +63,9 @@ $secondTDWidth: 1-$firstTDWidth;
 /************************************************************************/
 /*Container
 /************************************************************************/
+
+$fieldSetWidth:75%;
+
 .viewContainer {
     width: $pageWidth;
     /*border: 1px solid black;*/
@@ -96,7 +99,18 @@ $secondTDWidth: 1-$firstTDWidth;
         padding-bottom: 10px;
         border-color: silver;
         border-style: solid;
-        width: 75%;
+        width: $fieldSetWidth;
+        margin-top: 20px
+    }
+
+    .fieldsetDashboard {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-color: silver;
+        border-style: solid;
+        width: $fieldSetWidth;
         margin-top: 20px
     }
 }
@@ -142,6 +156,30 @@ $MaintainViewFieldWidth: 100%;
 @mixin DummyStyle {
     background: white;
 }
+
+
+.tableDashboard {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    margin: 4px;
+    font-family: $font;
+
+    td:first-child {
+        width: 50%;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 5px;
+    }
+
+    td:nth-child(2) {
+        width: 50%;
+        padding: 0px;
+    }
+}
+
+
 
 .tableMaintain {
     width: 100%;

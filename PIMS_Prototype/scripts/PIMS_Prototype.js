@@ -23,6 +23,31 @@ function Create_Menu_HTML() {
 	return str;
 }
 
+function Create_Dashboard_HTML() {
+    var str = "";
+    str += "<nav class=\"navbar navbar-expand-sm navbar-light\">";
+    str += "<ul class=\"navbar-nav\">";
+
+    str += "<li class=\"nav-item dropdown\">";
+    str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Home</a>";
+    str += "<div class=\"dropdown-menu\">";
+    str += "<a class=\"dropdown-item\" href=\"content\\welcome.html\">Welcome</a>";
+    str += "<a class=\"dropdown-item\" href=\"content\\about.html\">About</a>";
+    str += "</div>";
+    str += "</li>";
+
+    str += "<li class=\"nav-item dropdown\">";
+    str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Maintain Member</a>";
+    str += "<div class=\"dropdown-menu\">";
+    str += "<a class=\"dropdown-item\" href=\"content\\MemberInformation.html\">Member Information</a>";
+    str += "</div>";
+    str += "</li>";
+
+    str += "</ul>";
+    str += "</nav>";
+    return str;
+}
+
 
 //******************************************************************************************
 // UI Initializers
