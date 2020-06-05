@@ -20,6 +20,8 @@ $validationWarningBackgroundColor: #FFF9D7;
 
 $pageWidth:1000px;
 
+$firstTDWidth: .45;
+$secondTDWidth: 1-$firstTDWidth;
 
 /************************************************************************/
 /*Validation
@@ -130,7 +132,7 @@ $pageWidth:1000px;
 
 @mixin FirstTD($alignment) {
     text-align: $alignment;
-    width: 40%;
+    width: $firstTDWidth * 100%;
 }
 
 $MaintainViewFieldWidth: 100%;
@@ -158,7 +160,7 @@ $MaintainViewFieldWidth: 100%;
     }
 
     td:nth-child(2) {
-        width: 60%;
+        width: $secondTDWidth * 100%;
     }
 
     .isSmallField {

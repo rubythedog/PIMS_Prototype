@@ -92,13 +92,13 @@
   /*classes for formating and validationby. creating a class, you can have the class show up in intellisense*/ }
   .tableMaintain td:first-child {
     text-align: right;
-    width: 40%; }
+    width: 45%; }
   .tableMaintain td:first-child.SubSection {
     text-align: left;
-    width: 40%;
+    width: 45%;
     text-decoration: underline; }
   .tableMaintain td:nth-child(2) {
-    width: 60%; }
+    width: 55%; }
   .tableMaintain .isSmallField {
     width: 100%; }
   .tableMaintain .isLargeField {

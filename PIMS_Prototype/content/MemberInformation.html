@@ -170,7 +170,7 @@
         <fieldset class="fieldsetAddEdit">
             <legend>Emergency Contacts</legend>
 
-            <table ID="tblContact1" class="tableMaintain">
+            <table ID="tblEmergencyContacts" class="tableMaintain">
 
                 <!--************************************************************************-->
                 <!--SubSection Contact One                                                  -->
@@ -462,7 +462,7 @@
         <fieldset class="fieldsetAddEdit">
             <legend>Medical</legend>
 
-            <table ID="tblMemberInformation" class="tableMaintain">
+            <table ID="tblMedical" class="tableMaintain">
 
                 <!--************************************************************************-->
                 <!--SubSection Diagnosis                                                  -->
@@ -758,58 +758,361 @@
                 <!--************************************************************************-->
                 <!--SubSection Suicide                                      -->
                 <!--************************************************************************-->
-                <tr><td class="SubSection">Other / Hospitalization</td><td /></tr>
+                <tr><td class="SubSection">Suicide</td><td /></tr>
 
-            <tr><td>Attempted Suicide ?</td><td><input id="AttemptedSuicide" type="checkbox" class="isEdittable isRequired"> </td></tr>
-            <tr><td>Thoughts of Suicide ?</td><td><textarea id="ThoughtsOfSuicide" class="isEdittable isLargeField"></textarea></td></tr>
-            <tr><td>Suicide Notes</td><td><textarea id="SuicideNotes" class="isEdittable isLargeField"></textarea></td></tr>
-
-            <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
-                <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
-                <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
-                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
-                <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker isSmallField"></td></tr>
-                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="DATE_TIME_PICKER_ID" type="text" class="isDateTimePicker isSmallField"></td></tr>
-                <tr><td>CHECKBOX_LABEL</td><td><input id="CHECKBOX_ID" type="checkbox" class="isEdittable"> </td></tr>
-                <tr><td>PHONENUMBER_LABEL</td><td><input id="PHONENUMBER_ID" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
-
+                <tr><td>Attempted Suicide ?</td><td><input id="AttemptedSuicide" type="checkbox" class="isEdittable isRequired"> </td></tr>
+                <tr><td>Thoughts of Suicide ?</td><td><textarea id="ThoughtsOfSuicide" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Suicide Notes</td><td><textarea id="SuicideNotes" class="isEdittable isLargeField"></textarea></td></tr>
 
             </table>
         </fieldset>
 
+
+        <!--************************************************************************-->
+        <!--Membership Information                                                        -->
+        <!--************************************************************************-->
+
+        <fieldset class="fieldsetAddEdit">
+            <legend>Membership Information</legend>
+
+            <table ID="tblMembershipInformation" class="tableMaintain">
+
+                <tr><td>Tour Date</td><td><input id="TourDate" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>Intake Date</td><td><input id="IntakeDate" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>Orientation Date</td><td><input id="OrientationDate" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>Last Visited</td><td><input id="LastVisited" type="text" class="isDateTimePicker isSmallField"></td></tr>
+                <tr><td>Last Contact</td><td><input id="LastContact" type="text" class="isDateTimePicker isSmallField"></td></tr>
+                <tr><td>How Can Prosper Place Support ?</td><td><textarea id="HowCanProsperPlaceSupport" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Activities To Support Wellness</td><td><textarea id="ActivitiesToSupportWellness" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Support System</td><td><textarea id="SupportSystem" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>How Did Member Hear About Prosper Place</td><td><textarea id="HowDidMemberHearAboutProsperPlace" class="isEdittable isLargeField"></textarea></td></tr>
+
+                <tr>
+                    <td>Reason For Membership</td>
+                    <td>
+                        <select id="ReasonForMembership" class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Avoid Isolation</option>
+                            <option value="2">Develop Interpersonal / Social Skills</option>
+                            <option value="3">Feel Needed</option>
+                            <option value="4">Find Employment</option>
+                            <option value="5">Improve Self Image / Self-Esteem / Self-Confidence</option>
+                            <option value="6">Keep Active/Busy</option>
+                            <option value="7">Learn Cleaning / Cooking Skills</option>
+                            <option value="8">Learn Financial Skills</option>
+                            <option value="9">Learn New Skills</option>
+                            <option value="10">Learn Office / Computer Skills</option>
+                            <option value="11">Mandatory Attendance</option>
+                            <option value="12">Meet People / Make Friends / Socialization</option>
+                            <option value="13">Safe Place To Be</option>
+                            <option value="14">Sense Of Accomplishment</option>
+                            <option value="15">Sense Of Belonging</option>
+                            <option value="16">Someplace To Go</option>
+                            <option value="17">Something To Do</option>
+                            <option value="18">Structure My Days</option>
+                            <option value="19">Volunteer</option>
+                            <option value="20">Work Experience</option>
+                            <option value="21">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+
+                <tr><td>Other Reason</td><td><textarea id="OtherReason" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Anything else member wants to achieve ?</td><td><textarea id="Anythingelsememberwantstoachieve" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Challenges getting to Prosper Place ?</td><td><textarea id="ChallengesgettingtoProsperPlace" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Currently attending or have attended other programs?</td><td><input id="Currentlyattendingorhaveattendedotherprograms" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Other Program Notes</td><td><textarea id="OtherProgramNotes" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Skills and Strengths</td><td><textarea id="SkillsandStrengths" class="isEdittable isLargeField"></textarea></td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Goals                                      -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Goals</td><td /></tr>
+
+                <tr><td>Goal Plan Created ?</td><td><input id="GoalPlanCreated" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Goals</td><td><textarea id="Goals" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>Challenges Achieving Goals ?</td><td><textarea id="ChallengesAchievingGoals" class="isEdittable isLargeField"></textarea></td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Units                                      -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Units</td><td /></tr>
+
+                <tr><td>Administration</td><td><input id="Administration" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Culinary</td><td><input id="Culinary" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Other</td><td><input id="Units_Other" type="checkbox" class="isEdittable"> </td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Training                                      -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Training</td><td /></tr>
+
+                <tr><td>Canteen</td><td><input id="Canteen" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Canteen Training Date</td><td><input id="CanteenTrainingDate" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>Reception</td><td><input id="Reception" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Reception Training Date</td><td><input id="ReceptionTrainingDate" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>Other</td><td><input id="Training_Other" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Other Training Date</td><td><input id="OtherTrainingDate" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>Training Notes</td><td><textarea id="TrainingNotes" class="isEdittable isLargeField"></textarea></td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Teams                                      -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Teams</td><td /></tr>
+
+                <tr><td>Special Events</td><td><input id="SpecialEvents" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Employment</td><td><input id="Employment" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Social Rec</td><td><input id="SocialRec" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Fundraising</td><td><input id="Fundraising" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Newsletter</td><td><input id="Newsletter" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Marketing</td><td><input id="Marketing" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Workshop</td><td><input id="Workshop" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Resource</td><td><input id="Resource" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Menu Planning</td><td><input id="MenuPlanning" type="checkbox" class="isEdittable"> </td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Other                                      -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Other</td><td /></tr>
+                <tr><td>Outreach ?</td><td><input id="Outreach" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Is Society Member ?</td><td><input id="IsSocietyMember" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Society Membership Paid ?</td><td><input id="SocietyMembershipPaid" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Society Membership Date</td><td><input id="SocietyMembershipDate" type="text" class="isDateTimePicker  isEdittable"> </td></tr>
+                <tr>
+                    <td>Member Status</td>
+                    <td>
+                        <select id="MemberStatus" class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Active</option>
+                            <option value="2">Inactive</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Member Wants To Be Contacted ?</td><td><input id="MemberWantsToBeContacted" type="checkbox" class="isEdittable"></td></tr>
+
+            </table>
+        </fieldset>
+
+        <!--************************************************************************-->
+        <!--Section Template                                                        -->
+        <!--************************************************************************-->
+        <fieldset class="fieldsetAddEdit">
+            <legend>Forms</legend>
+
+            <table ID="tblForms" class="tableMaintain">
+
+                <tr><td>Release of Info Form Complete ?</td><td><input id="ReleaseofInfoFormComplete" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Employment Survey Form Complete ?</td><td><input id="EmploymentSurveyFormComplete" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Code of Conduct Form Complete ?</td><td><input id="CodeofConductFormComplete" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Photo/Video Release Form Complete ?</td><td><input id="PhotoVideoReleaseFormComplete" type="checkbox" class="isEdittable"> </td></tr>
+
+            </table>
+        </fieldset>
 
 
         <!--************************************************************************-->
         <!--Section Template                                                        -->
         <!--************************************************************************-->
-
         <fieldset class="fieldsetAddEdit">
-            <legend>SECTION_TEMPLATE</legend>
+            <legend>Employment</legend>
 
-            <table ID="tbl_TABLE_ID" class="tableMaintain">
+            <table ID="tblEmployment" class="tableMaintain">
 
                 <!--************************************************************************-->
-                <!--SubSection Template                                                     -->
+                <!--SubSection Current Employment                                                     -->
                 <!--************************************************************************-->
-                <tr><td class="SubSection">SUBSECTION</td><td /></tr>
+                <tr><td class="SubSection">Current Employment</td><td /></tr>
 
-                <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
-                <tr><td>TEXT_LABEL</td><td><input id="TEXT_CONTROL_ID" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
-                <tr><td>TEXTAREA_LABEL</td><td><textarea id="TEXTAREA_CONTROL_ID" class="isEdittable isLargeField"></textarea></td></tr>
-                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
-                <tr><td>DATE_PICKER_LABEL</td><td><input id="DATE_PICKER_ID" type="text" class="isDatePicker isSmallField"></td></tr>
-                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="DATE_TIME_PICKER_ID" type="text" class="isDateTimePicker isSmallField"></td></tr>
-                <tr><td>CHECKBOX_LABEL</td><td><input id="CHECKBOX_ID" type="checkbox" class="isEdittable"> </td></tr>
-                <tr><td>PHONENUMBER_LABEL</td><td><input id="PHONENUMBER_ID" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+                <tr><td>Currently Employed ?</td><td><input id="CurrentlyEmployed" type="checkbox" class="isEdittable"> </td></tr>
 
+                <tr>
+                    <td>Current Or Previous Occupation</td>
+                    <td>
+                        <select id="CurrentOrPreviousOccupation" class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Academic / Scientific</option>
+                            <option value="2">Accounting</option>
+                            <option value="3">Advertising</option>
+                            <option value="4">Agriculture / Farming</option>
+                            <option value="5">Architecture</option>
+                            <option value="6">Arts</option>
+                            <option value="7">Banking</option>
+                            <option value="8">Carpenter</option>
+                            <option value="9">Child Care</option>
+                            <option value="10">Computers / Information Technology</option>
+                            <option value="11">Construction</option>
+                            <option value="12">Consulting</option>
+                            <option value="13">Customer Service</option>
+                            <option value="14">Education</option>
+                            <option value="15">Electrician</option>
+                            <option value="16">Energy</option>
+                            <option value="17">Engineering</option>
+                            <option value="18">Facilities</option>
+                            <option value="19">Federal Government</option>
+                            <option value="20">Finance / Loans</option>
+                            <option value="21">Food Service</option>
+                            <option value="22">Healthcare</option>
+                            <option value="23">Hospitality</option>
+                            <option value="24">Human Resources</option>
+                            <option value="25">Insurance</option>
+                            <option value="26">Labourer</option>
+                            <option value="27">Law Enforcement / Security</option>
+                            <option value="28">Legal</option>
+                            <option value="29">Logistics</option>
+                            <option value="30">Management</option>
+                            <option value="31">Manufacturing</option>
+                            <option value="32">Marketing</option>
+                            <option value="33">Mechanical / Operational / Maintenance</option>
+                            <option value="34">Municipal Government</option>
+                            <option value="35">Non-Profit</option>
+                            <option value="36">Office / Administrative</option>
+                            <option value="37">Pharmaceutical</option>
+                            <option value="38">Plumber</option>
+                            <option value="39">Provincial Government</option>
+                            <option value="40">Public Relations</option>
+                            <option value="41">Publishing</option>
+                            <option value="42">Real Estate</option>
+                            <option value="43">Restaurant</option>
+                            <option value="44">Retail</option>
+                            <option value="45">Sales</option>
+                            <option value="46">Small Business Owner</option>
+                            <option value="47">Social Care / Social Work</option>
+                            <option value="48">Student</option>
+                            <option value="49">Telecommunications</option>
+                            <option value="50">Training</option>
+                            <option value="51">Transportation</option>
+                            <option value="52">Travel</option>
+                            <option value="53">Volunteering</option>
+                            <option value="54">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Other Occupation</td><td><input id="OtherOccupation" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>Employment Location</td><td><input id="EmploymentLocation" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>Current Employer Is Hiring ?</td><td><input id="CurrentEmployerIsHiring" type="checkbox" class="isEdittable"> </td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Seeking Employment                                                     -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Seeking Employment</td><td /></tr>
+                <tr><td>Looking For Employment ?</td><td><input id="LookingForEmployment" type="checkbox" class="isEdittable"> </td></tr>
+                <tr>
+                    <td>What Occupation</td>
+                    <td>
+                        <select id="WhatOccupation" class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Academic / Scientific</option>
+                            <option value="2">Accounting</option>
+                            <option value="3">Advertising</option>
+                            <option value="4">Agriculture / Farming</option>
+                            <option value="5">Architecture</option>
+                            <option value="6">Arts</option>
+                            <option value="7">Banking</option>
+                            <option value="8">Carpenter</option>
+                            <option value="9">Child Care</option>
+                            <option value="10">Computers / Information Technology</option>
+                            <option value="11">Construction</option>
+                            <option value="12">Consulting</option>
+                            <option value="13">Customer Service</option>
+                            <option value="14">Education</option>
+                            <option value="15">Electrician</option>
+                            <option value="16">Energy</option>
+                            <option value="17">Engineering</option>
+                            <option value="18">Facilities</option>
+                            <option value="19">Federal Government</option>
+                            <option value="20">Finance / Loans</option>
+                            <option value="21">Food Service</option>
+                            <option value="22">Healthcare</option>
+                            <option value="23">Hospitality</option>
+                            <option value="24">Human Resources</option>
+                            <option value="25">Insurance</option>
+                            <option value="26">Labourer</option>
+                            <option value="27">Law Enforcement / Security</option>
+                            <option value="28">Legal</option>
+                            <option value="29">Logistics</option>
+                            <option value="30">Management</option>
+                            <option value="31">Manufacturing</option>
+                            <option value="32">Marketing</option>
+                            <option value="33">Mechanical / Operational / Maintenance</option>
+                            <option value="34">Municipal Government</option>
+                            <option value="35">Non-Profit</option>
+                            <option value="36">Office / Administrative</option>
+                            <option value="37">Pharmaceutical</option>
+                            <option value="38">Plumber</option>
+                            <option value="39">Provincial Government</option>
+                            <option value="40">Public Relations</option>
+                            <option value="41">Publishing</option>
+                            <option value="42">Real Estate</option>
+                            <option value="43">Restaurant</option>
+                            <option value="44">Retail</option>
+                            <option value="45">Sales</option>
+                            <option value="46">Small Business Owner</option>
+                            <option value="47">Social Care / Social Work</option>
+                            <option value="48">Student</option>
+                            <option value="49">Telecommunications</option>
+                            <option value="50">Training</option>
+                            <option value="51">Transportation</option>
+                            <option value="52">Travel</option>
+                            <option value="53">Volunteering</option>
+                            <option value="54">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Employment Type</td>
+                    <td>
+                        <select id="EmploymentType" class="isEdittable isRequired isSmallField">
+                            <option value=""></option>
+                            <option value="1">Full-Time</option>
+                            <option value="2">Part-Time</option>
+                            <option value="3">Either</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Suggestions Of Employers To Contact</td><td><textarea id="SuggestionsOfEmployersToContact" class="isEdittable isLargeField"></textarea></td></tr>
+
+                <!--************************************************************************-->
+                <!--SubSection Volunteering                                                     -->
+                <!--************************************************************************-->
+                <tr><td class="SubSection">Seeking Employment</td><td /></tr>
+
+                <tr><td>Currently Volunteering ?</td><td><input id="CurrentlyVolunteering" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Want To Volunteer ?</td><td><input id="WantToVolunteer" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>Volunteering Location</td><td><textarea id="VolunteeringLocation" class="isEdittable isLargeField"></textarea></td></tr>
 
             </table>
         </fieldset>
 
+        <!--************************************************************************-->
+        <!--Section Template                                                        -->
+        <!--************************************************************************-->
+        <!--<fieldset class="fieldsetAddEdit">
+            <legend>SECTION_TEMPLATE</legend>
+
+            <table ID="tbl_TABLE_ID" class="tableMaintain">-->
+        <!--************************************************************************-->
+        <!--SubSection Template                                                     -->
+        <!--************************************************************************-->
+        <!--<tr><td class="SubSection">SUBSECTION</td><td /></tr>
+
+                <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
+                <tr><td>TEXT_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>TEXTAREA_LABEL</td><td><textarea id="|" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
+                <tr><td>DATE_PICKER_LABEL</td><td><input id="|" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="|" type="text" class="isDateTimePicker isSmallField"></td></tr>
+                <tr><td>CHECKBOX_LABEL</td><td><input id="|" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>PHONENUMBER_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
 
 
-
-
+            </table>
+        </fieldset>-->
+        
     </div>
 </body>
 

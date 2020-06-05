@@ -67,6 +67,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\index.html" />
+    <Content Include="content\welcome.html" />
     <Content Include="fonts\readme.txt" />
     <Content Include="images\ProsperPlace_Logo.png" />
     <Content Include="images\ProsperPlace_Logo2.png" />
@@ -122,7 +124,7 @@
     <Content Include="styles\PIMS_Prototype_navbar.css" />
     <Content Include="styles\Site.css" />
     <Content Include="Web.config" />
-    <Content Include="content\MaintainMember.html" />
+    <Content Include="content\MemberInformation.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

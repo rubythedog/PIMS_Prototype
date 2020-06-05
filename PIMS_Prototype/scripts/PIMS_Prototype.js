@@ -6,14 +6,15 @@ function Create_Menu_HTML() {
 	str += "<li class=\"nav-item dropdown\">";
     str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Home</a>";
 	str +="<div class=\"dropdown-menu\">";
-    str +="<a class=\"dropdown-item\" href=\"content\\about.html\">About</a>";
+    str += "<a class=\"dropdown-item\" href=\"content\\welcome.html\">Welcome</a>";
+    str += "<a class=\"dropdown-item\" href=\"content\\about.html\">About</a>";
 	str +="</div>";
     str += "</li>";
 
     str += "<li class=\"nav-item dropdown\">";
-    str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Member</a>";
+    str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Maintain Member</a>";
     str += "<div class=\"dropdown-menu\">";
-    str += "<a class=\"dropdown-item\" href=\"content\\MaintainMember.html\">Maintain Member</a>";
+    str += "<a class=\"dropdown-item\" href=\"content\\MemberInformation.html\">Member Information</a>";
     str += "</div>";
     str += "</li>";
 
