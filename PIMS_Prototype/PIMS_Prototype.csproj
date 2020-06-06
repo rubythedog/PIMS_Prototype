@@ -124,7 +124,7 @@
     <Content Include="styles\PIMS_Prototype_navbar.css" />
     <Content Include="styles\Site.css" />
     <Content Include="Web.config" />
-    <Content Include="content\MemberInformation.html" />
+    <Content Include="content\MaintainMember.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

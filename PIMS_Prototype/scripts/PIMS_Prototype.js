@@ -1,30 +1,5 @@
 function Create_Menu_HTML() {
     var str = "";
-	str +="<nav class=\"navbar navbar-expand-sm navbar-light\">";
-	str +="<ul class=\"navbar-nav\">";
-
-	str += "<li class=\"nav-item dropdown\">";
-    str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Home</a>";
-	str +="<div class=\"dropdown-menu\">";
-    str += "<a class=\"dropdown-item\" href=\"content\\welcome.html\">Welcome</a>";
-    str += "<a class=\"dropdown-item\" href=\"content\\about.html\">About</a>";
-	str +="</div>";
-    str += "</li>";
-
-    str += "<li class=\"nav-item dropdown\">";
-    str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Maintain Member</a>";
-    str += "<div class=\"dropdown-menu\">";
-    str += "<a class=\"dropdown-item\" href=\"content\\MemberInformation.html\">Member Information</a>";
-    str += "</div>";
-    str += "</li>";
-
-	str +="</ul>";
-	str +="</nav>";
-	return str;
-}
-
-function Create_Dashboard_HTML() {
-    var str = "";
     str += "<nav class=\"navbar navbar-expand-sm navbar-light\">";
     str += "<ul class=\"navbar-nav\">";
 
@@ -39,13 +14,69 @@ function Create_Dashboard_HTML() {
     str += "<li class=\"nav-item dropdown\">";
     str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Maintain Member</a>";
     str += "<div class=\"dropdown-menu\">";
-    str += "<a class=\"dropdown-item\" href=\"content\\MemberInformation.html\">Member Information</a>";
+    str += "<a class=\"dropdown-item\" href=\"content\\MaintainMember.html\">Member Information</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('Address');return false;\" href=\"#\" >Address</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('ContactDetails');return false;\" href=\"#\" >Contact Details</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('EmergencyContacts');return false;\" href=\"#\" >Emergency Contacts</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('Medical');return false;\" href=\"#\" >Medical</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('MembershipInformation');return false;\" href=\"#\" >Membership Information</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('Forms');return false;\" href=\"#\" >Forms</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('Employment');return false;\" href=\"#\" >Employment</a>";
     str += "</div>";
     str += "</li>";
 
     str += "</ul>";
     str += "</nav>";
     return str;
+}
+
+function Create_Dashboard_HTML(person) {
+    var template = "";
+
+    template += " <div class=\"viewContainer\">";
+    template += " <fieldset class=\"fieldsetDashboard\"   id=\"fieldsSet0_Dashboard\" >";
+    template += " <table id=\"dashboard\" class=\"tableDashboard\">";
+    template += " <tr>";
+    template += " <td><img src=\"../images/ProsperPlace_Logo2.png\" width=\"200\" /></td>";
+    template += " <td>";
+    template += " <br />";
+
+    switch (person) {
+        case "john":
+            {
+                template += " <div><b>Member:</b> John Smith</div>";
+                template += " <div><b>Date of Birth:</b> May 12, 1980</div>";
+                template += " <div><b>Phone Number:</b> 780-123-4567</div>";
+                template += " <div><b>Member Since:</b> December 3, 2018</div>";
+            }
+            // code block
+            break;
+        case "jane":
+            // code block
+            {
+                template += " <div><b>Member:</b> Jane Doe</div>";
+                template += " <div><b>Date of Birth:</b> September 29, 1976</div>";
+                template += " <div><b>Phone Number:</b> 780-321-764</div>";
+                template += " <div><b>Member Since:</b> July 2, 2012</div>";
+            }
+            // code block
+            break;
+        default:
+            {
+                template += " <div><b>Member:</b></div>";
+                template += " <div><b>Date of Birth:</b></div>";
+                template += " <div><b>Phone Number:</b></div>";
+                template += " <div><b>Member Since:</b></div>";
+            }
+    }
+    template += " </td>";
+    template += " </tr>";
+    template += " </table>";
+    template += " </fieldset>";
+    template += " </div>";
+
+    return template;
+
 }
 
 
@@ -59,8 +90,32 @@ function Create_Dashboard_HTML() {
 
 function UIInitialize_BasePage() {
     UIInitialize_BasePageMenu();
+    UIInitialize_Dashboard();
     UIInitialize_InsertRequiredAsterisk();
     UIInitialize_PlugIns();
+    UIInitialize_HideFieldSets();
+    UIInitialize_ShowFieldset("MemberInformation");
+
+}
+
+
+function UIInitialize_BasePageMenu() {
+    // https://flaviocopes.com/javascript-regular-expressions/#groups
+
+    var replacedStr = Create_Menu_HTML();
+
+    replacedStr = replacedStr.replace(/href=\"#\"/g, 'hrXef=\"#\"');
+    replacedStr = replacedStr.replace(/href=\"/g, 'href=\"../');
+    replacedStr = replacedStr.replace(/hrXef=\"#\"/g, 'href=\"#\"');
+
+    $("#menu").html(replacedStr);
+}
+
+function UIInitialize_Dashboard() {
+
+    var replacedStr = Create_Dashboard_HTML("john");
+
+    $("#dashboard").html(replacedStr);
 }
 
 function UIInitialize_PlugIns() {
@@ -69,40 +124,21 @@ function UIInitialize_PlugIns() {
     UIInitialize_AlbertaHealthCare_PlugIn();
 }
 
-function UIInitialize_SubFolderPage() {
-    UIInitialize_SubFolderPageMenu();
-    UIInitialize_InsertRequiredAsterisk();
-    UIInitialize_HideDivs();
-}
-
-function UIInitialize_BasePageMenu() {
-    // https://flaviocopes.com/javascript-regular-expressions/#groups
-
-    var replacedStr = Create_Menu_HTML();
-    
-    replacedStr = replacedStr.replace('href=\"#\"', 'hrXef=\"#\"');
-    replacedStr = replacedStr.replace(/href=\"/g, 'href=\"../');
-    replacedStr = replacedStr.replace('hrXef=\"#\"', 'href=\"#\"');
-
-    $("#menu").html(replacedStr);
-
-}
-
-function UIInitialize_SubFolderPageMenu() {
-    // https://flaviocopes.com/javascript-regular-expressions/#groups
-
-    var replacedStr = Create_Menu_HTML();
-
-    replacedStr = replacedStr.replace('href=\"#\"', 'hrXef=\"#\"');
-    replacedStr = replacedStr.replace(/href=\"/g, 'href=\"../../');
-    replacedStr = replacedStr.replace('hrXef=\"#\"', 'href=\"#\"');
-
-    $("#menu").html(replacedStr);
-}
-
 // Menus
 //******************************************************************************************
 
+
+function UIInitialize_HideFieldSets() {
+    $("fieldset").css("display", "none");
+    dashboard = "fieldset[id*=\"Dashboard\"]";
+    $(dashboard).css("display", "block"); //always show dashboard
+}
+
+function UIInitialize_ShowFieldset(section) {
+    //section = "Address";
+    sectionToFind = `fieldset[id*="${section}"]`;
+    $(sectionToFind).css("display", "block");
+}
 
 function UIInitialize_InsertRequiredAsterisk() {
     $(".isRequired").each(function () {
@@ -121,7 +157,7 @@ function UIInitialize_DateTimePickers_PlugIn() {
     $(".isDateTimePicker").daterangepicker({
         singleDatePicker: true,
         showDropdowns: true,
-        timePicker:true,
+        timePicker: true,
         autoUpdateInput: false, //false means don't display a default date
         startDate: moment(),
         locale: {
@@ -170,12 +206,18 @@ function EventHandlers_Register() {
     //nothing at this time
 }
 
+function ShowSection(section) {
+    UIInitialize_HideFieldSets();
+    UIInitialize_ShowFieldset(section);
+
+}
+
 
 //******************************************************************************************
 // jQuery Extensions
 //******************************************************************************************
 (function ($) {
-   
+
     $.fn.AHC_Number = function (options) {
         var params = $.extend({
             format: 'xxxxx-xxxx'
@@ -197,7 +239,7 @@ function EventHandlers_Register() {
             if (e.shiftKey) {
                 return false;
             }
-            if (e.which != 8 && e.which != 0 && !(e.which >= 48 && e.which <= 57) && !(e.which >= 96 && e.which <= 105)   ){
+            if (e.which != 8 && e.which != 0 && !(e.which >= 48 && e.which <= 57) && !(e.which >= 96 && e.which <= 105)) {
                 return false;
             }
             var curchr = this.value.length;

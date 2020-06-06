@@ -43,23 +43,7 @@
 
 <body class="body-content">
 
-    <div class="viewContainer">
-        <fieldset class="fieldsetDashboard">
-            <table ID="dashboard" class="tableDashboard">
-                <tr>
-                    <td><img src="../images/ProsperPlace_Logo2.png" width="200" /></td>
-                    <td>
-                        <br />
-                        <div><b>Member:</b> John Smith</div>
-                        <div><b>Date of Birth:</b> May 12, 1980</div>
-                        <div><b>Phone Number:</b> 780-123-4567</div>
-                        <div><b>Member Since:</b> December 3, 2018</div>
-                    </td>
-
-                </tr>
-            </table>
-        </fieldset>
-    </div>
+    <span id="dashboard"></span>
 
     <div class="viewContainer">
 
@@ -67,10 +51,10 @@
         <!--Member Information                                                      -->
         <!--************************************************************************-->
 
-        <fieldset class="fieldsetAddEdit">
+        <fieldset class="fieldsetAddEdit" id="fieldsSet1_MemberInformation">
             <legend>Member Information</legend>
 
-            <table ID="tblMemberInformation" class="tableMaintain">
+            <table id="tblMemberInformation" class="tableMaintain">
 
                 <tr><td>First Name</td><td><input id="FirstName" type="text" class="isEdittable isSmallField isRequired"></td></tr>
                 <tr><td>Middle Name</td><td><input id="MiddleName" type="text" class="isEdittable isSmallField"></td></tr>
@@ -97,10 +81,10 @@
         <!--************************************************************************-->
         <!--Address                                                                 -->
         <!--************************************************************************-->
-        <fieldset class="fieldsetAddEdit">
+        <fieldset class="fieldsetAddEdit" id="fieldSet2_Address">
             <legend>Address</legend>
 
-            <table ID="tblAddress" class="tableMaintain">
+            <table id="tblAddress" class="tableMaintain">
 
                 <tr>
                     <td>Living Situation</td>
@@ -165,10 +149,10 @@
         <!--************************************************************************-->
         <!--Contact Details                                                         -->
         <!--************************************************************************-->
-        <fieldset class="fieldsetAddEdit">
+        <fieldset class="fieldsetAddEdit" id="fieldSet3_ContactDetails">
             <legend>Contact Details</legend>
 
-            <table ID="tblContactDetails" class="tableMaintain">
+            <table id="tblContactDetails" class="tableMaintain">
 
                 <tr><td>Home Phone</td><td><input id="Home_Phone" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr><td>Cell Phone</td><td><input id="Cel_Phone" type="text" class="isEdittable isSmallField "> </td></tr>
@@ -181,10 +165,10 @@
         <!--************************************************************************-->
         <!--Emergency Contacts                                                      -->
         <!--************************************************************************-->
-        <fieldset class="fieldsetAddEdit">
+        <fieldset class="fieldsetAddEdit" id="fieldSet4_EmergencyContacts">
             <legend>Emergency Contacts</legend>
 
-            <table ID="tblEmergencyContacts" class="tableMaintain">
+            <table id="tblEmergencyContacts" class="tableMaintain">
 
                 <!--************************************************************************-->
                 <!--SubSection Contact One                                                  -->
@@ -241,7 +225,7 @@
 
             </table>
 
-            <table ID="tblContact2" class="tableMaintain">
+            <table id="tblContact2" class="tableMaintain">
 
                 <!--************************************************************************-->
                 <!--SubSection Contact Two                                                  -->
@@ -298,7 +282,7 @@
 
             </table>
 
-            <table ID="tblContact_LegalGuardian" class="tableMaintain">
+            <table id="tblContact_LegalGuardian" class="tableMaintain">
 
                 <!--************************************************************************-->
                 <!--SubSection Legal Guardian                                                 -->
@@ -473,10 +457,10 @@
         <!--Medical                                                  -->
         <!--************************************************************************-->
 
-        <fieldset class="fieldsetAddEdit">
+        <fieldset class="fieldsetAddEdit" id="fieldSet5_Medical">
             <legend>Medical</legend>
 
-            <table ID="tblMedical" class="tableMaintain">
+            <table id="tblMedical" class="tableMaintain">
 
                 <!--************************************************************************-->
                 <!--SubSection Diagnosis                                                  -->
@@ -786,10 +770,10 @@
         <!--Membership Information                                                        -->
         <!--************************************************************************-->
 
-        <fieldset class="fieldsetAddEdit">
+        <fieldset class="fieldsetAddEdit" id="fieldSet6_MembershipInformation">
             <legend>Membership Information</legend>
 
-            <table ID="tblMembershipInformation" class="tableMaintain">
+            <table id="tblMembershipInformation" class="tableMaintain">
 
                 <tr><td>Tour Date</td><td><input id="TourDate" type="text" class="isDatePicker isSmallField"></td></tr>
                 <tr><td>Intake Date</td><td><input id="IntakeDate" type="text" class="isDatePicker isSmallField"></td></tr>
@@ -912,10 +896,10 @@
         <!--************************************************************************-->
         <!--Section Template                                                        -->
         <!--************************************************************************-->
-        <fieldset class="fieldsetAddEdit">
+        <fieldset class="fieldsetAddEdit" id="fieldSet7_Forms">
             <legend>Forms</legend>
 
-            <table ID="tblForms" class="tableMaintain">
+            <table id="tblForms" class="tableMaintain">
 
                 <tr><td>Release of Info Form Complete ?</td><td><input id="ReleaseofInfoFormComplete" type="checkbox" class="isEdittable"> </td></tr>
                 <tr><td>Employment Survey Form Complete ?</td><td><input id="EmploymentSurveyFormComplete" type="checkbox" class="isEdittable"> </td></tr>
@@ -929,10 +913,10 @@
         <!--************************************************************************-->
         <!--Section Template                                                        -->
         <!--************************************************************************-->
-        <fieldset class="fieldsetAddEdit">
+        <fieldset class="fieldsetAddEdit" id="fieldSet8_Employment">
             <legend>Employment</legend>
 
-            <table ID="tblEmployment" class="tableMaintain">
+            <table id="tblEmployment" class="tableMaintain">
 
                 <!--************************************************************************-->
                 <!--SubSection Current Employment                                                     -->
@@ -1108,7 +1092,7 @@
         <!--<fieldset class="fieldsetAddEdit">
             <legend>SECTION_TEMPLATE</legend>
 
-            <table ID="tbl_TABLE_ID" class="tableMaintain">-->
+            <table id="tbl_TABLE_ID" class="tableMaintain">-->
         <!--************************************************************************-->
         <!--SubSection Template                                                     -->
         <!--************************************************************************-->
