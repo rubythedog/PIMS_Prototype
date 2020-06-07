@@ -1,3 +1,7 @@
+var currentSectionNumber = 1;
+var firstSectionNumber = 1;
+var lastSectionNumber = 8;
+
 function Create_Menu_HTML() {
     var str = "";
     str += "<nav class=\"navbar navbar-expand-sm navbar-light\">";
@@ -34,7 +38,7 @@ function Create_Dashboard_HTML(person) {
     var template = "";
 
     template += " <div class=\"viewContainer\">";
-    template += " <fieldset class=\"fieldsetDashboard\"   id=\"fieldsSet0_Dashboard\" >";
+    template += " <fieldset class=\"fieldsetDashboard\"   id=\"fieldsSet_Dashboard\" >";
     template += " <table id=\"dashboard\" class=\"tableDashboard\">";
     template += " <tr>";
     template += " <td><img src=\"../images/ProsperPlace_Logo2.png\" width=\"200\" /></td>";
@@ -79,6 +83,12 @@ function Create_Dashboard_HTML(person) {
 
 }
 
+function Create_NavigationButtons_HTML() {
+    var str = "";
+   
+    return str;
+}
+
 
 //******************************************************************************************
 // UI Initializers
@@ -91,11 +101,16 @@ function Create_Dashboard_HTML(person) {
 function UIInitialize_BasePage() {
     UIInitialize_BasePageMenu();
     UIInitialize_Dashboard();
+    UIInitialize_NavigationButtons();
     UIInitialize_InsertRequiredAsterisk();
     UIInitialize_PlugIns();
     UIInitialize_HideFieldSets();
-    UIInitialize_ShowFieldset("MemberInformation");
-
+    UIInitialize_ShowFieldsetByName("MemberInformation");
+    EventHandlers_Register();
+    $("#ButtonNext").enable(true);
+    $("#ButtonPrevious").enable(false);
+    $("#ButtonBeginning").enable(false);
+    $("#ButtonEnd").enable(false);
 }
 
 
@@ -118,6 +133,13 @@ function UIInitialize_Dashboard() {
     $("#dashboard").html(replacedStr);
 }
 
+function UIInitialize_NavigationButtons() {
+
+    var replacedStr = Create_NavigationButtons_HTML();
+
+    $("#navigationButtons").html(replacedStr);
+}
+
 function UIInitialize_PlugIns() {
     UIInitialize_DateTimePickers_PlugIn();
     UIInitialize_PhoneNumberField_PlugIn();
@@ -134,9 +156,9 @@ function UIInitialize_HideFieldSets() {
     $(dashboard).css("display", "block"); //always show dashboard
 }
 
-function UIInitialize_ShowFieldset(section) {
+function UIInitialize_ShowFieldsetByName(sectionName) {
     //section = "Address";
-    sectionToFind = `fieldset[id*="${section}"]`;
+    sectionToFind = `fieldset[id*="${sectionName}"]`;
     $(sectionToFind).css("display", "block");
 }
 
@@ -204,12 +226,104 @@ function UIInitialize_AlbertaHealthCare_PlugIn() {
 //******************************************************************************************
 function EventHandlers_Register() {
     //nothing at this time
+    EventHandler_PageNavigationCommandButtonClick();
 }
 
-function ShowSection(section) {
-    UIInitialize_HideFieldSets();
-    UIInitialize_ShowFieldset(section);
 
+function EventHandler_PageNavigationCommandButtonClick() {
+    $(".CommandButton")
+        .click(function () {
+            var idButtonClickedOn = $(this).attr("id");
+            if (!$(this).IsEnabled(idButtonClickedOn))
+                return;
+            currentSectionNumber = NavigateToNewPageAndSetCommandButtonStates(currentSectionNumber, idButtonClickedOn);
+        });
+}
+
+
+//******************************************************************************************
+// Navigation Button Event Handlers
+//******************************************************************************************
+
+function ShowSectionByName(sectionName) {
+    UIInitialize_HideFieldSets();
+    UIInitialize_ShowFieldsetByName(sectionName);
+}
+
+function ShowSectionByNumber(sectionNumber) {
+    UIInitialize_HideFieldSets();
+    sectionToFind = `fieldSet[id*="fieldSet${sectionNumber}"]`;
+    $(sectionToFind).css("display", "block");
+}
+//function HideSectionByNumber(sectionNumber) {
+//    $("#fieldSet" + sectionNumber).css("display", "none");
+
+function EnabledNextButton(state) {
+    $("#ButtonNext").enable(state);
+    //if (state == true) {
+    //    $("#ButtonNext").attr("title", "");
+    //}
+    //else {
+    //    $("#ButtonNext").attr("title", "You can only navigate to the next page after you have completed the task.");
+    //}
+}
+
+function NavigateToNewPageAndSetCommandButtonStates(thisCurrentSectionNumber, idButtonClickedOn) {
+    $("#ButtonBeginning").enable(true);
+    $("#ButtonPrevious").enable(true);
+    EnabledNextButton(false);
+    $("#ButtonEnd").enable(false);
+    var sectionNumber;
+    if (idButtonClickedOn == "ButtonBeginning") {
+        $("#" + idButtonClickedOn).enable(false);
+        $("#ButtonPrevious").enable(false);
+        $("#ButtonNext").enable(true);
+        sectionNumber = firstSectionNumber;
+    }
+    else if (idButtonClickedOn == "ButtonPrevious") {
+        if (thisCurrentSectionNumber == firstSectionNumber) {
+            $("#" + idButtonClickedOn).enable(false);
+            $("#ButtonBeginning").enable(false);
+            EnabledNextButton(true);
+            sectionNumber = firstSectionNumber;
+        }
+        else {
+            EnabledNextButton(true);
+            sectionNumber = currentSectionNumber - 1;
+        }
+    }
+    else if (idButtonClickedOn == "ButtonNext") {
+        if (thisCurrentSectionNumber == lastSectionNumber) {
+            $("#" + idButtonClickedOn).enable(false);
+            $("#ButtonEnd").enable(false);
+            sectionNumber = lastSectionNumber;
+        }
+        else {
+            sectionNumber = currentSectionNumber + 1;
+        }
+    }
+    else if (idButtonClickedOn == "ButtonEnd") {
+        $("#" + idButtonClickedOn).enable(false);
+        EnabledNextButton(false);
+        sectionNumber = lastSectionNumber;
+    }
+    //HideSectionByNumber(currentSectionNumber);
+    ShowSectionByNumber(sectionNumber);
+    if (sectionNumber == lastSectionNumber) {
+        EnabledNextButton(false);
+        $("#ButtonEnd").enable(false);
+    }
+    else if (sectionNumber == firstSectionNumber) {
+        $("#ButtonPrevious").enable(false);
+        $("#ButtonBeginning").enable(false);
+    }
+
+    EnabledNextButton(true);
+    //force to true for the first page
+    if ((sectionNumber == firstSectionNumber))
+        EnabledNextButton(true);
+
+    return sectionNumber;
 }
 
 
@@ -254,3 +368,25 @@ function ShowSection(section) {
     }
 
 }(jQuery));
+
+$(function () {
+    jQuery.fn.extend({
+        enable: function (state) {
+            return this.each(function () {
+                if (state == true)
+                    $(this).css("color", "black");
+                else
+                    $(this).css("color", "grey");
+            });
+        }
+    });
+    jQuery.fn.extend({
+        IsEnabled: function () {
+            var buttonColor = $(this).css("color");
+            if (buttonColor == "rgb(0, 0, 0)")
+                return true;
+            else
+                return false;
+        }
+    });
+});

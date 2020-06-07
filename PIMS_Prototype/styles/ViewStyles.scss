@@ -18,10 +18,18 @@ $validationWarningInfoBackgroundColor: #dfe4ee;
 $validationSuccessBorder: #E2C822;
 $validationWarningBackgroundColor: #FFF9D7;
 
+
+/*views*/
 $pageWidth:1000px;
 
 $firstTDWidth: .45;
 $secondTDWidth: 1-$firstTDWidth;
+
+/*CommandButtons*/
+$CommandButton_Color: #E2E2E2;
+$CommandButtonHover_Color: #a5acb0;
+$CommandButton_Border_Color: #cac4c4;
+
 
 /************************************************************************/
 /*Validation
@@ -281,5 +289,49 @@ $MaintainViewFieldWidth: 100%;
      white-space: nowrap;
      overflow: hidden;
 }
+
+/************************************************************************/
+/*Navigation Buttons
+/************************************************************************/
+
+$Page_BackgroundColor: white;
+
+table.CommandButtonTable {
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: none;
+    border: 0px;
+    border-color: $Page_BackgroundColor;
+    table-layout: fixed;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 00px;
+    margin-top: 20px
+}
+
+td.CommandButton {
+    min-height: 30px;
+    background-color: $CommandButton_Color;
+    border: 2px solid $CommandButton_Border_Color;
+    padding: 0px;
+    vertical-align:middle
+}
+
+td.InvisibleCommandButton {
+    min-height: 30px;
+    background-color: $Page_BackgroundColor;
+    border: 0px $Page_BackgroundColor;
+}
+
+td.CommandButton:hover {
+    background-color: $CommandButtonHover_Color;
+}
+
+.CommandButtonLargeFont {
+    font-size: x-large;
+}
+
 
 

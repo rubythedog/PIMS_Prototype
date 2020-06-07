@@ -51,7 +51,7 @@
         <!--Member Information                                                      -->
         <!--************************************************************************-->
 
-        <fieldset class="fieldsetAddEdit" id="fieldsSet1_MemberInformation">
+        <fieldset class="fieldsetAddEdit" id="fieldSet1_MemberInformation">
             <legend>Member Information</legend>
 
             <table id="tblMemberInformation" class="tableMaintain">
@@ -702,7 +702,7 @@
                 <tr><td>Side Effects</td><td><textarea id="SideEffects" class="isEdittable isLargeField"></textarea></td></tr>
 
                 <!--************************************************************************-->
-                <!--SubSection Alergies                                                  -->
+                <!--SubSection Allergies                                                  -->
                 <!--************************************************************************-->
                 <tr><td class="SubSection">Allergies</td><td /></tr>
                 <tr><td>Allergic To Anything ?</td><td><input id="AllergicToAnything" type="checkbox" class="isEdittable isRequired"> </td></tr>
@@ -1086,30 +1086,47 @@
             </table>
         </fieldset>
 
-        <!--************************************************************************-->
+    <span id="navigationButtons"></span>
+    
+    <div style="width:750px">
+        <table class="CommandButtonTable">
+            <tr>
+                <td class="CommandButton CommandButtonLargeFont" id="ButtonBeginning"><i class="fa fa-step-backward" style="font-size: 20px"></i></td>
+                <td class="InvisibleCommandButton"></td>
+                <td class="CommandButton" id="ButtonPrevious">Previous</td>
+                <td class="InvisibleCommandButton"></td>
+                <td class="CommandButton" id="ButtonNext">Next</td>
+                <td class="InvisibleCommandButton"></td>
+                <td class="CommandButton CommandButtonLargeFont" id="ButtonEnd"><i class="fa fa-step-forward" style="font-size: 20px"></i></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!--************************************************************************-->
         <!--Section Template                                                        -->
         <!--************************************************************************-->
         <!--<fieldset class="fieldsetAddEdit">
-            <legend>SECTION_TEMPLATE</legend>
+        <legend>SECTION_TEMPLATE</legend>
 
-            <table id="tbl_TABLE_ID" class="tableMaintain">-->
+        <table id="tbl_TABLE_ID" class="tableMaintain">-->
         <!--************************************************************************-->
         <!--SubSection Template                                                     -->
         <!--************************************************************************-->
         <!--<tr><td class="SubSection">SUBSECTION</td><td /></tr>
 
-                <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
-                <tr><td>TEXT_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
-                <tr><td>TEXTAREA_LABEL</td><td><textarea id="|" class="isEdittable isLargeField"></textarea></td></tr>
-                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
-                <tr><td>DATE_PICKER_LABEL</td><td><input id="|" type="text" class="isDatePicker isSmallField"></td></tr>
-                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="|" type="text" class="isDateTimePicker isSmallField"></td></tr>
-                <tr><td>CHECKBOX_LABEL</td><td><input id="|" type="checkbox" class="isEdittable"> </td></tr>
-                <tr><td>PHONENUMBER_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+            <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
+            <tr><td>TEXT_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
+            <tr><td>TEXTAREA_LABEL</td><td><textarea id="|" class="isEdittable isLargeField"></textarea></td></tr>
+            <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
+            <tr><td>DATE_PICKER_LABEL</td><td><input id="|" type="text" class="isDatePicker isSmallField"></td></tr>
+            <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="|" type="text" class="isDateTimePicker isSmallField"></td></tr>
+            <tr><td>CHECKBOX_LABEL</td><td><input id="|" type="checkbox" class="isEdittable"> </td></tr>
+            <tr><td>PHONENUMBER_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
 
 
-            </table>
-        </fieldset>-->
+        </table>
+    </fieldset>-->
 
     </div>
 </body>

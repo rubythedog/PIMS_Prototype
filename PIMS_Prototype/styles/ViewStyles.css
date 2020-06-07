@@ -2,6 +2,8 @@
 /*variables
 /************************************************************************/
 /* validation */
+/*views*/
+/*CommandButtons*/
 /************************************************************************/
 /*Validation
 /************************************************************************/
@@ -175,3 +177,38 @@
   border-right-width: 0;
   white-space: nowrap;
   overflow: hidden; }
+
+/************************************************************************/
+/*Navigation Buttons
+/************************************************************************/
+table.CommandButtonTable {
+  text-align: center;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: none;
+  border: 0px;
+  border-color: white;
+  table-layout: fixed;
+  width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 00px;
+  margin-top: 20px; }
+
+td.CommandButton {
+  min-height: 30px;
+  background-color: #E2E2E2;
+  border: 2px solid #cac4c4;
+  padding: 0px;
+  vertical-align: middle; }
+
+td.InvisibleCommandButton {
+  min-height: 30px;
+  background-color: white;
+  border: 0px white; }
+
+td.CommandButton:hover {
+  background-color: #a5acb0; }
+
+.CommandButtonLargeFont {
+  font-size: x-large; }
