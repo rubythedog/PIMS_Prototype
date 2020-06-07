@@ -171,6 +171,9 @@ function UIInitialize_ShowFieldsetByName(sectionName) {
     //section = "Address";
     sectionToFind = `fieldset[id*="${sectionName}"]`;
     $(sectionToFind).css("display", "block");
+    var thisid = $(sectionToFind).attr('id');
+    currentSectionNumber = parseInt(thisid.substring(8, 9),10);
+
 }
 
 function UIInitialize_InsertRequiredAsterisk() {
