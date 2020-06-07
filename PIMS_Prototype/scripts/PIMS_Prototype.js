@@ -19,13 +19,13 @@ function Create_Menu_HTML() {
     str += "<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">Maintain Member</a>";
     str += "<div class=\"dropdown-menu\">";
     str += "<a class=\"dropdown-item\" href=\"content\\MaintainMember.html\">Member Information</a>";
-    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('Address');return false;\" href=\"#\" >Address</a>";
-    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('ContactDetails');return false;\" href=\"#\" >Contact Details</a>";
-    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('EmergencyContacts');return false;\" href=\"#\" >Emergency Contacts</a>";
-    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('Medical');return false;\" href=\"#\" >Medical</a>";
-    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('MembershipInformation');return false;\" href=\"#\" >Membership Information</a>";
-    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('Forms');return false;\" href=\"#\" >Forms</a>";
-    str += "<a class=\"dropdown-item\" onclick=\"ShowSection('Employment');return false;\" href=\"#\" >Employment</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSectionByName('Address');return false;\" href=\"#\" >Address</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSectionByName('ContactDetails');return false;\" href=\"#\" >Contact Details</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSectionByName('EmergencyContacts');return false;\" href=\"#\" >Emergency Contacts</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSectionByName('Medical');return false;\" href=\"#\" >Medical</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSectionByName('MembershipInformation');return false;\" href=\"#\" >Membership Information</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSectionByName('Forms');return false;\" href=\"#\" >Forms</a>";
+    str += "<a class=\"dropdown-item\" onclick=\"ShowSectionByName('Employment');return false;\" href=\"#\" >Employment</a>";
     str += "</div>";
     str += "</li>";
 
@@ -85,7 +85,19 @@ function Create_Dashboard_HTML(person) {
 
 function Create_NavigationButtons_HTML() {
     var str = "";
-   
+    str += " <div style=\"width:750px\">";
+    str += " <table class=\"CommandButtonTable\">";
+    str += " <tr>";
+    str += " <td class=\"CommandButton CommandButtonLargeFont\" id=\"ButtonBeginning\"><i class=\"fa fa-step-backward\" style=\"font-size: 20px\"></i></td>";
+    str += " <td class=\"InvisibleCommandButton\"></td>";
+    str += " <td class=\"CommandButton\" id=\"ButtonPrevious\">Previous</td>";
+    str += " <td class=\"InvisibleCommandButton\"></td>";
+    str += " <td class=\"CommandButton\" id=\"ButtonNext\">Next</td>";
+    str += " <td class=\"InvisibleCommandButton\"></td>";
+    str += " <td class=\"CommandButton CommandButtonLargeFont\" id=\"ButtonEnd\"><i class=\"fa fa-step-forward\" style=\"font-size: 20px\"></i></td>";
+    str += " </tr>";
+    str += " </table>";
+    str += " </div>";
     return str;
 }
 
@@ -106,11 +118,10 @@ function UIInitialize_BasePage() {
     UIInitialize_PlugIns();
     UIInitialize_HideFieldSets();
     UIInitialize_ShowFieldsetByName("MemberInformation");
-    EventHandlers_Register();
     $("#ButtonNext").enable(true);
     $("#ButtonPrevious").enable(false);
     $("#ButtonBeginning").enable(false);
-    $("#ButtonEnd").enable(false);
+    $("#ButtonEnd").enable(true);
 }
 
 
@@ -272,7 +283,7 @@ function NavigateToNewPageAndSetCommandButtonStates(thisCurrentSectionNumber, id
     $("#ButtonBeginning").enable(true);
     $("#ButtonPrevious").enable(true);
     EnabledNextButton(false);
-    $("#ButtonEnd").enable(false);
+    $("#ButtonEnd").enable(true);
     var sectionNumber;
     if (idButtonClickedOn == "ButtonBeginning") {
         $("#" + idButtonClickedOn).enable(false);
@@ -318,7 +329,9 @@ function NavigateToNewPageAndSetCommandButtonStates(thisCurrentSectionNumber, id
         $("#ButtonBeginning").enable(false);
     }
 
-    EnabledNextButton(true);
+    if (thisCurrentSectionNumber != lastSectionNumber-1) {
+        EnabledNextButton(true);
+    }
     //force to true for the first page
     if ((sectionNumber == firstSectionNumber))
         EnabledNextButton(true);
@@ -330,44 +343,51 @@ function NavigateToNewPageAndSetCommandButtonStates(thisCurrentSectionNumber, id
 //******************************************************************************************
 // jQuery Extensions
 //******************************************************************************************
-(function ($) {
+(function($) {
 
-    $.fn.AHC_Number = function (options) {
+    $.fn.AHC_Number = function(options) {
         var params = $.extend({
-            format: 'xxxxx-xxxx'
-        }, options);
-        $(this).bind('paste', function (e) {
-            e.preventDefault();
-            var inputValue = e.originalEvent.clipboardData.getData('Text');
-            if (!$.isNumeric(inputValue)) {
-                return false;
-            } else {
-                inputValue = String(inputValue.replace(/(\d{5})(\d{4})/, "$1-$2"));
-                $(this).val(inputValue);
-                $(this).val('');
-                inputValue = inputValue.substring(0, 10);
-                $(this).val(inputValue);
-            }
-        });
-        $(this).on('keydown touchend', function (e) {
-            if (e.shiftKey) {
-                return false;
-            }
-            if (e.which != 8 && e.which != 0 && !(e.which >= 48 && e.which <= 57) && !(e.which >= 96 && e.which <= 105)) {
-                return false;
-            }
-            var curchr = this.value.length;
-            var curval = $(this).val();
-            if (curchr == 5 && e.which != 8 && e.which != 0) {
-                $(this).val(curval + "-");
-            }
-            $(this).attr('maxlength', '10');
-        });
+                format: 'xxxxx-xxxx'
+            },
+            options);
+        $(this).bind('paste',
+            function(e) {
+                e.preventDefault();
+                var inputValue = e.originalEvent.clipboardData.getData('Text');
+                if (!$.isNumeric(inputValue)) {
+                    return false;
+                } else {
+                    inputValue = String(inputValue.replace(/(\d{5})(\d{4})/, "$1-$2"));
+                    $(this).val(inputValue);
+                    $(this).val('');
+                    inputValue = inputValue.substring(0, 10);
+                    $(this).val(inputValue);
+                }
+            });
+        $(this).on('keydown touchend',
+            function(e) {
+                if (e.shiftKey) {
+                    return false;
+                }
+                if (e.which != 8 &&
+                    e.which != 0 &&
+                    !(e.which >= 48 && e.which <= 57) &&
+                    !(e.which >= 96 && e.which <= 105)) {
+                    return false;
+                }
+                var curchr = this.value.length;
+                var curval = $(this).val();
+                if (curchr == 5 && e.which != 8 && e.which != 0) {
+                    $(this).val(curval + "-");
+                }
+                $(this).attr('maxlength', '10');
+            });
 
 
     }
 
 }(jQuery));
+
 
 $(function () {
     jQuery.fn.extend({
