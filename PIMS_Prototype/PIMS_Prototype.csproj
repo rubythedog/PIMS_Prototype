@@ -70,6 +70,7 @@
     <Content Include="content\index.html" />
     <Content Include="content\welcome.html" />
     <Content Include="fonts\readme.txt" />
+    <Content Include="images\PIMS.png" />
     <Content Include="images\ProsperPlace_Logo.png" />
     <Content Include="images\ProsperPlace_Logo2.png" />
     <Content Include="packages.config" />

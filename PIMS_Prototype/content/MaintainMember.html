@@ -29,8 +29,68 @@
     <script type="text/javascript">
         $(document).ready(function () {
             UIInitialize_BasePage();
-            EventHandlers_Register();
+            UIInitialize_Dashboard();
+            UIInitialize_NavigationButtons();
+            UIInitialize_InsertRequiredAsterisk();
+            UIInitialize_PlugIns();
+            UIInitialize_HideFieldSets();
+            UIInitialize_ShowSectionByName("MemberInformation");
+            $("#ButtonNext").enable(true);
+            $("#ButtonPrevious").enable(false);
+            $("#ButtonBeginning").enable(false);
+            $("#ButtonEnd").enable(true);
+            EventHandler_SectionNavigationCommandButtonClick();
+
+            var searchOrCreate = GetURLParameter("action"); //1 = search, 2 = create
+            if (searchOrCreate == 1) {
+                PopulateWithJohnSmith("search");
+            } 
         });
+
+        function PopulateWithJohnSmith() {
+            $("#LastName").val("Smith");
+            $("#FirstName").val("John");
+            $("#Gender").val(1);
+            $("#DateOfBirth").val("December 3, 2018");
+            $("#LivingSituation").val(1);
+            $("#LivingFacilityName").val("Dwayne's House");
+            $("#Suite_Unit").val("300");
+            $("#Address").val("12209 108 st");
+            $("#City").val("Edmonton");
+            $("#Province").val(9);
+            $("#Home_Phone").val("(780)-123-4567");
+            $("#EMailAddress").val("j_smith29@gmail.com");
+            $("#Contact1_HomePhone").val("(780)-555-1212");
+            $("#Contact1_FirstName").val("Mary");
+            $("#Contact1_LastName").val("Hines");
+            $("#Contact1_ContactRelationship").val(26);
+            $("#AlbertaHealthCareNumber").val("67543-3234");
+            $("#HavePhoto").prop("checked", true);
+            $("#PrimarySourceOfIncome").val(3);
+            $("#FirstLanguage").val(1);
+            $("#HighestLevelOfEducation").val(5);
+            //$("#HistoryOfViolence").checked(false);
+            $("#HasAngerIssues").prop("checked", true);
+            $("#IsOnProbationParole").prop("checked", true);
+            $("#PresentingProblem").val(9);
+            $("#Diagnosis1").val(3);
+            $("#DateOfDiagnosis1").val("August 15, 2001");
+            $("#Symptoms").val("Trouble being around large crowds, avoids social situations.");
+            ////$("#TakingAnyMedication").checked(false);
+            $("#Addiction").val(3);
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+            $("#XXXXX").val("X");
+
+        }
 
 
     </script>
@@ -47,6 +107,7 @@
 
     <div class="viewContainer">
 
+        
         <!--************************************************************************-->
         <!--Member Information                                                      -->
         <!--************************************************************************-->
@@ -175,7 +236,7 @@
                 <!--************************************************************************-->
                 <tr><td class="SubSection">Contact One</td><td /></tr>
 
-                <tr><td>First Name</td><td><input id="Contact1_HomePhone" type="text" class="isEdittable isSmallField "> </td></tr>
+                <tr><td>First Name</td><td><input id="Contact1_FirstName" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr><td>Middle Name</td><td><input id="Contact1_MiddleName" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr><td>Last Name</td><td><input id="Contact1_LastName" type="text" class="isEdittable isSmallField "> </td></tr>
                 <tr>
@@ -718,7 +779,7 @@
                     <td>
                         <select id="Addiction" class="isEdittable isRequired isSmallField">
                             <option value=""></option>
-                            <option value="1">Alochol</option>
+                            <option value="1">Alcohol</option>
                             <option value="2">Binge Drinking</option>
                             <option value="3">Cigarettes / Tobacco</option>
                             <option value="4">Cocaine / Crack</option>
@@ -1086,9 +1147,9 @@
             </table>
         </fieldset>
 
-    <span id="navigationButtons"></span>
+        <span id="navigationButtons"></span>
 
-    <!--************************************************************************-->
+        <!--************************************************************************-->
         <!--Section Template                                                        -->
         <!--************************************************************************-->
         <!--<fieldset class="fieldsetAddEdit">
@@ -1100,18 +1161,18 @@
         <!--************************************************************************-->
         <!--<tr><td class="SubSection">SUBSECTION</td><td /></tr>
 
-            <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
-            <tr><td>TEXT_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
-            <tr><td>TEXTAREA_LABEL</td><td><textarea id="|" class="isEdittable isLargeField"></textarea></td></tr>
-            <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
-            <tr><td>DATE_PICKER_LABEL</td><td><input id="|" type="text" class="isDatePicker isSmallField"></td></tr>
-            <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="|" type="text" class="isDateTimePicker isSmallField"></td></tr>
-            <tr><td>CHECKBOX_LABEL</td><td><input id="|" type="checkbox" class="isEdittable"> </td></tr>
-            <tr><td>PHONENUMBER_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+                <tr><td>LABEL</td><td>CONTROL_GOES_HERE</td></tr>
+                <tr><td>TEXT_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isRequired"> </td></tr>
+                <tr><td>TEXTAREA_LABEL</td><td><textarea id="|" class="isEdittable isLargeField"></textarea></td></tr>
+                <tr><td>DROP_DOWN_LABEL</td><td><select class="isEdittable isRequired isSmallField"><option value=""></option><option value="1">OPTION1</option><option value="2">OPTION2</option></select></td></tr>
+                <tr><td>DATE_PICKER_LABEL</td><td><input id="|" type="text" class="isDatePicker isSmallField"></td></tr>
+                <tr><td>DATE_TIME_PICKER_LABEL</td><td><input id="|" type="text" class="isDateTimePicker isSmallField"></td></tr>
+                <tr><td>CHECKBOX_LABEL</td><td><input id="|" type="checkbox" class="isEdittable"> </td></tr>
+                <tr><td>PHONENUMBER_LABEL</td><td><input id="|" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
 
 
-        </table>
-    </fieldset>-->
+            </table>
+        </fieldset>-->
 
     </div>
 </body>

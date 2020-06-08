@@ -7,32 +7,81 @@
     <link rel="stylesheet" href="../styles/google_fonts.css" />
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
     <link rel="stylesheet" href="../styles/PIMS_Prototype_navbar.css" />
-    <link rel="stylesheet" href="../styles/PIMS_Prototype.css"/><link rel="stylesheet" href="../styles/ViewStyles.css" /> <link rel="stylesheet" href="../styles/Site.css" />
-    <link rel="stylesheet" href="../styles/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../styles/font-awesome.min.css" />
     <script src="../scripts/jquery-3.2.1.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="../scripts/PIMS_Prototype.js"></script>
+    <link rel="stylesheet" href="../styles/PIMS_Prototype.css" />
+    <link rel="stylesheet" href="../styles/ViewStyles.css" />
+    <link rel="stylesheet" href="../styles/Site.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/daterangepicker.css" />
+    <script src="../scripts/moment.min.js"></script>
+    <script src="../scripts/daterangepicker.js"></script>
+
+    <!--https://github.com/xdan/datetimepicker/issues/665-->
+    <!--https://github.com/dangrossman/daterangepicker-->
+    <!--http://www.daterangepicker.com/-->
+
+    <script src="../scripts/jquery-input-mask-phone-number.js"></script>
+    <!--https://www.jqueryscript.net/form/jQuery-Input-Mask-Phone-Numbers.html-->
 
     <script type="text/javascript">
         $(document).ready(function () {
             UIInitialize_BasePage();
-            EventHandlers_Register();
         });</script>
 </head>
 
 <span id="menu"></span>
 
 <body class="body-content">
-    <div>
-        <img src="../images/ProsperPlace_Logo2.png" width="200" />
-    </div>
-    <br />
 
-<h1 class="short">Welcome To PIMS</h1>
-    
-    <div class="viewContainer">
-        Prosper Place Information Member System
+
+    <div style="width:750px">
+        <table id="tblSearchOrCreateNewMember" class="tableMaintain">
+            <tr>
+                <td style="text-align: left"><img src="../images/ProsperPlace_Logo2.png" width="200" /></td>
+                <td style="text-align: right; vertical-align: bottom"><img src="../images/PIMS.png" width="286" /></td>
+            </tr>
+        </table>
     </div>
+
+
+    <div class="viewContainer">
+
+        <!--************************************************************************-->
+        <!--Search Or Create New
+        <!--************************************************************************-->
+
+
+        <fieldset class="fieldsetAddEdit" id="fieldSet_SearchOrCreateNewMember">
+            <legend>Search Member</legend>
+
+            <table id="tblSearchOrCreateNewMember" class="tableMaintain">
+
+                <tr><td>First Name</td><td><input id="FirstNameToSearch" type="text" class="isEdittable isSmallField" value="John"></td></tr>
+                <tr><td>Last Name</td><td><input id="LastNameToSearch" type="text" class="isEdittable isSmallField" value="Smith"> </td></tr>
+                <tr><td>Date of Birth</td><td><input id="DateOfBirthToSearch" type="text" class="isDatePicker"></td></tr>
+                <tr><td>Phone</td><td><input id="PhoneToSearch" type="text" class="isEdittable isSmallField isPhoneNumber"> </td></tr>
+
+            </table>
+        </fieldset>
+
+    </div>
+
+    <div style="width: 750px">
+        <table class="CommandButtonTable">
+            <tbody>
+                <tr>
+                    <td class="InvisibleCommandButton" style="width: 10%"></td>
+                    <td class="CommandButton" id="ButtonSearch" style="color: black; padding:5px" onclick="location.href='..\\content\\MaintainMember.html?action=1'">Search Member</td> 
+                    <td class="InvisibleCommandButton" style="width: 10%"></td>
+                    <td class="CommandButton" id="ButtonCreateNew" style="color: black;" onclick="location.href='..\\content\\MaintainMember.html?action=2'">Create Member</td>
+                    <td class="InvisibleCommandButton" style="width: 10%"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 
 </html>

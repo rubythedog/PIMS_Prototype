@@ -45,12 +45,18 @@ function Create_Dashboard_HTML(person) {
     template += " <td>";
     template += " <br />";
 
+    person = "";
+    var searchOrCreate = GetURLParameter("action"); //1 = search, 2 = create
+    if (searchOrCreate == 1) {
+        person = "john";
+    }
+
     switch (person) {
         case "john":
             {
                 template += " <div><b>Member:</b> John Smith</div>";
                 template += " <div><b>Date of Birth:</b> May 12, 1980</div>";
-                template += " <div><b>Phone Number:</b> 780-123-4567</div>";
+                template += " <div><b>Phone Number:</b> (780)-123-4567</div>";
                 template += " <div><b>Member Since:</b> December 3, 2018</div>";
             }
             // code block
@@ -112,16 +118,6 @@ function Create_NavigationButtons_HTML() {
 
 function UIInitialize_BasePage() {
     UIInitialize_BasePageMenu();
-    UIInitialize_Dashboard();
-    UIInitialize_NavigationButtons();
-    UIInitialize_InsertRequiredAsterisk();
-    UIInitialize_PlugIns();
-    UIInitialize_HideFieldSets();
-    UIInitialize_ShowFieldsetByName("MemberInformation");
-    $("#ButtonNext").enable(true);
-    $("#ButtonPrevious").enable(false);
-    $("#ButtonBeginning").enable(false);
-    $("#ButtonEnd").enable(true);
 }
 
 
@@ -163,16 +159,18 @@ function UIInitialize_PlugIns() {
 
 function UIInitialize_HideFieldSets() {
     $("fieldset").css("display", "none");
-    dashboard = "fieldset[id*=\"Dashboard\"]";
-    $(dashboard).css("display", "block"); //always show dashboard
+    var alwaysShow = "fieldset[id*=\"Dashboard\"]";
+    $(alwaysShow).css("display", "block"); //always show dashboard
+    alwaysShow = "fieldset[id*=\"SearchOrCreateNewMember\"]";
+    $(alwaysShow).css("display", "block"); //always show dashboard
 }
 
-function UIInitialize_ShowFieldsetByName(sectionName) {
+function UIInitialize_ShowSectionByName(sectionName) {
     //section = "Address";
     sectionToFind = `fieldset[id*="${sectionName}"]`;
     $(sectionToFind).css("display", "block");
     var thisid = $(sectionToFind).attr('id');
-    currentSectionNumber = parseInt(thisid.substring(8, 9),10);
+    currentSectionNumber = parseInt(thisid.substring(8, 9), 10);
 
 }
 
@@ -238,21 +236,30 @@ function UIInitialize_AlbertaHealthCare_PlugIn() {
 //******************************************************************************************
 // Event Handlers
 //******************************************************************************************
-function EventHandlers_Register() {
-    //nothing at this time
-    EventHandler_PageNavigationCommandButtonClick();
-}
+//function EventHandlers_Register() {
+//    //nothing at this time
+//    EventHandler_SectionNavigationCommandButtonClick();
+//    EventHandler_SearchOrCreateNewCommandButtonClick();
+//}
 
 
-function EventHandler_PageNavigationCommandButtonClick() {
+function EventHandler_SectionNavigationCommandButtonClick() {
     $(".CommandButton")
         .click(function () {
             var idButtonClickedOn = $(this).attr("id");
             if (!$(this).IsEnabled(idButtonClickedOn))
                 return;
-            currentSectionNumber = NavigateToNewPageAndSetCommandButtonStates(currentSectionNumber, idButtonClickedOn);
+            currentSectionNumber = ShowSectionFromButtonClick(currentSectionNumber, idButtonClickedOn);
         });
 }
+
+//function EventHandler_SearchOrCreateNewCommandButtonClick() {
+//    $("#ButtonSearch").attr("href", "..\\content\\MaintainMember.html");
+//    $("#ButtonCreateNew")
+//        .click(function () {
+//            currentSectionNumber = ShowSectionFromButtonClick(currentSectionNumber, idButtonClickedOn);
+//        });
+//}
 
 
 //******************************************************************************************
@@ -261,7 +268,7 @@ function EventHandler_PageNavigationCommandButtonClick() {
 
 function ShowSectionByName(sectionName) {
     UIInitialize_HideFieldSets();
-    UIInitialize_ShowFieldsetByName(sectionName);
+    UIInitialize_ShowSectionByName(sectionName);
 }
 
 function ShowSectionByNumber(sectionNumber) {
@@ -282,79 +289,101 @@ function EnabledNextButton(state) {
     //}
 }
 
-function NavigateToNewPageAndSetCommandButtonStates(thisCurrentSectionNumber, idButtonClickedOn) {
+function ShowSectionFromButtonClick(thisCurrentSectionNumber, idButtonClickedOn) {
     $("#ButtonBeginning").enable(true);
     $("#ButtonPrevious").enable(true);
     EnabledNextButton(false);
     $("#ButtonEnd").enable(true);
-    var sectionNumber;
+    var sectionNumberToShow;
     if (idButtonClickedOn == "ButtonBeginning") {
         $("#" + idButtonClickedOn).enable(false);
         $("#ButtonPrevious").enable(false);
         $("#ButtonNext").enable(true);
-        sectionNumber = firstSectionNumber;
+        sectionNumberToShow = firstSectionNumber;
     }
     else if (idButtonClickedOn == "ButtonPrevious") {
         if (thisCurrentSectionNumber == firstSectionNumber) {
             $("#" + idButtonClickedOn).enable(false);
             $("#ButtonBeginning").enable(false);
             EnabledNextButton(true);
-            sectionNumber = firstSectionNumber;
+            sectionNumberToShow = firstSectionNumber;
         }
         else {
             EnabledNextButton(true);
-            sectionNumber = currentSectionNumber - 1;
+            sectionNumberToShow = currentSectionNumber - 1;
         }
     }
     else if (idButtonClickedOn == "ButtonNext") {
         if (thisCurrentSectionNumber == lastSectionNumber) {
             $("#" + idButtonClickedOn).enable(false);
             $("#ButtonEnd").enable(false);
-            sectionNumber = lastSectionNumber;
+            sectionNumberToShow = lastSectionNumber;
         }
         else {
-            sectionNumber = currentSectionNumber + 1;
+            sectionNumberToShow = currentSectionNumber + 1;
         }
     }
     else if (idButtonClickedOn == "ButtonEnd") {
         $("#" + idButtonClickedOn).enable(false);
         EnabledNextButton(false);
-        sectionNumber = lastSectionNumber;
+        sectionNumberToShow = lastSectionNumber;
     }
     //HideSectionByNumber(currentSectionNumber);
-    ShowSectionByNumber(sectionNumber);
-    if (sectionNumber == lastSectionNumber) {
+    ShowSectionByNumber(sectionNumberToShow);
+    if (sectionNumberToShow == lastSectionNumber) {
         EnabledNextButton(false);
         $("#ButtonEnd").enable(false);
     }
-    else if (sectionNumber == firstSectionNumber) {
+    else if (sectionNumberToShow == firstSectionNumber) {
         $("#ButtonPrevious").enable(false);
         $("#ButtonBeginning").enable(false);
     }
 
-    if (thisCurrentSectionNumber != lastSectionNumber-1) {
+    if (thisCurrentSectionNumber != lastSectionNumber - 1) {
         EnabledNextButton(true);
     }
     //force to true for the first page
-    if ((sectionNumber == firstSectionNumber))
+    if ((sectionNumberToShow == firstSectionNumber))
         EnabledNextButton(true);
 
-    return sectionNumber;
+    return sectionNumberToShow;
 }
+
+function GetURLParameter(sParam) {
+
+    var sPageURL = window.location.search.substring(1);
+
+    var sURLVariables = sPageURL.split('&');
+
+    for (var i = 0; i < sURLVariables.length; i++) {
+
+        var sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] == sParam) {
+
+            return sParameterName[1];
+
+        }
+
+    }
+
+}
+
+
 
 
 //******************************************************************************************
 // jQuery Extensions
 //******************************************************************************************
-(function($) {
+(function ($) {
 
-    $.fn.AHC_Number = function(options) {
+    $.fn.AHC_Number = function (options) {
         var params = $.extend({
-                format: 'xxxxx-xxxx'
-            },
+            format: 'xxxxx-xxxx'
+        },
             options);
         $(this).bind('paste',
-            function(e) {
+            function (e) {
                 e.preventDefault();
                 var inputValue = e.originalEvent.clipboardData.getData('Text');
                 if (!$.isNumeric(inputValue)) {
@@ -368,7 +397,7 @@ function NavigateToNewPageAndSetCommandButtonStates(thisCurrentSectionNumber, id
                 }
             });
         $(this).on('keydown touchend',
-            function(e) {
+            function (e) {
                 if (e.shiftKey) {
                     return false;
                 }
