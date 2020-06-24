@@ -11,7 +11,7 @@
     <script src="../scripts/jquery-3.2.1.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="../scripts/PIMS_Prototype.js"></script>
-    <link rel="stylesheet" href="../styles/PIMS_Prototype.css" />
+    <!--<link rel="stylesheet" href="../styles/PIMS_Prototype.css" />-->
     <link rel="stylesheet" href="../styles/ViewStyles.css" />
     <link rel="stylesheet" href="../styles/Site.css" />
     <link rel="stylesheet" type="text/css" href="../styles/daterangepicker.css" />
@@ -934,7 +934,13 @@
                 <!--SubSection Other                                      -->
                 <!--************************************************************************-->
                 <tr><td class="SubSection">Other</td><td /></tr>
-                <tr><td>Outreach ?</td><td><input id="Outreach" type="checkbox" class="isEdittable isRequired "> </td></tr>
+                
+                <tr><td>Outreach ?</td><td><select id="Outreach" class="isEdittable isRequired isSmallField"><option value=""></option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                    <option value="3">HWC</option>
+                </select></td></tr>
+
                 <tr><td>Is Society Member ?</td><td><input id="IsSocietyMember" type="checkbox" class="isEdittable isRequired "> </td></tr>
                 <tr><td>Society Membership Paid ?</td><td><input id="SocietyMembershipPaid" type="checkbox" class="isEdittable isRequired "> </td></tr>
                 <tr><td>Society Membership Date</td><td><input id="SocietyMembershipDate" type="text" class="isDateTimePicker  isEdittable"> </td></tr>
