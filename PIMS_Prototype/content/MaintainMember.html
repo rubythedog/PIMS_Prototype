@@ -147,18 +147,15 @@
 
             <table id="tblAddress" class="tableMaintain">
 
-                <tr>
-                    <td>Living Situation</td>
-                    <td>
-                        <select id="LivingSituation" class="isEdittable isRequired isSmallField">
-                            <option value=""></option>
-                            <option value="1">Facility Living</option>
-                            <option value="2">Home Living</option>
-                            <option value="3">Supportive Living</option>
-                            <option value="4">Other</option>
-                        </select>
-                    </td>
-                </tr>
+                <tr><td>Living Situation</td><td><select id="LivingSituation" class="isEdittable isRequired isSmallField"><option value=""></option>
+                    <option value="1">Group Home</option>
+                    <option value="2">Assisted Living</option>
+                    <option value="3">Support Home</option>
+                    <option value="4">Satellite House</option>
+                    <option value="5">Hosptial</option>
+                    <option value="6">Homeless</option>
+                    <option value="7">Other</option>
+                </select></td></tr>
 
                 <tr><td>Living Facility Name</td><td><textarea id="LivingFacilityName" class="isEdittable isLargeField"></textarea></td></tr>
                 <tr><td>Supportive Living Where</td><td><textarea id="SupportiveLivingWhere" class="isEdittable isLargeField"></textarea></td></tr>
@@ -472,18 +469,19 @@
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <td>First Language</td>
-                    <td>
-                        <select id="FirstLanguage" class="isEdittable isRequired isSmallField">
-                            <option value=""></option>
-                            <option value="1">English</option>
-                            <option value="2">Arabic</option>
-                            <option value="3">Hebrew</option>
-                            <option value="4">French</option>
-                        </select>
-                    </td>
-                </tr>
+                <tr><td>First Language</td><td><select id="FirstLanguage" class="isEdittable isRequired isSmallField"><option value=""></option>
+                    <option value="1">English</option>
+                    <option value="2">French</option>
+                    <option value="3">Chinese</option>
+                    <option value="4">Spanish </option>
+                    <option value="5">Cree</option>
+                    <option value="6">Inuktitut</option>
+                    <option value="7">Algonquian</option>
+                    <option value="8">Athabaskan</option>
+                    <option value="9">Siouan</option>
+                    <option value="10">Punjabi</option>
+                    <option value="11">Other</option>
+                </select></td></tr>
                 <tr><td>Indigenous Background</td><td><input id="IndigenousBackground" type="checkbox" class="isEdittable isRequired"> </td></tr>
                 <tr>
                     <td>Highest Level Of Education</td>
@@ -774,33 +772,29 @@
                 <!--************************************************************************-->
                 <tr><td class="SubSection">Addiction</td><td /></tr>
 
-                <tr>
-                    <td>Addiction</td>
-                    <td>
-                        <select id="Addiction" class="isEdittable isRequired isSmallField">
-                            <option value=""></option>
-                            <option value="1">Alcohol</option>
-                            <option value="2">Binge Drinking</option>
-                            <option value="3">Cigarettes / Tobacco</option>
-                            <option value="4">Cocaine / Crack</option>
-                            <option value="5">Cough Syrup</option>
-                            <option value="6">Eating / Food</option>
-                            <option value="7">GHP</option>
-                            <option value="8">Gambling</option>
-                            <option value="9">Hand Sanitizer</option>
-                            <option value="10">Heroin</option>
-                            <option value="11">LSD</option>
-                            <option value="12">Marijuana</option>
-                            <option value="13">Methamphetamine / Crystal Meth</option>
-                            <option value="14">Mushrooms</option>
-                            <option value="15">Painkillers</option>
-                            <option value="16">Pornography</option>
-                            <option value="17">Vaping</option>
-                            <option value="18">Windshield Wiper Fluid</option>
-                            <option value="19">Other</option>
-                        </select>
-                    </td>
-                </tr>
+            <tr><td>Addiction</td><td><select id="Addiction" class="isEdittable isRequired isSmallField"><option value=""></option>
+                <option value="1">Alochol</option>
+                <option value="2">Antifreeze</option>
+                <option value="3">Binge Drinking</option>
+                <option value="4">Cigarettes / Tobacco</option>
+                <option value="5">Cocaine / Crack</option>
+                <option value="6">Cough Syrup</option>
+                <option value="7">Eating / Food</option>
+                <option value="8">GHP</option>
+                <option value="9">Gambling</option>
+                <option value="10">Hand Sanitizer</option>
+                <option value="11">Heroin</option>
+                <option value="12">LSD</option>
+                <option value="13">Marijuana</option>
+                <option value="14">Methamphetamine / Crystal Meth</option>
+                <option value="15">Mouthwash</option>
+                <option value="16">Mushrooms</option>
+                <option value="17">Painkillers</option>
+                <option value="18">Pornography</option>
+                <option value="19">Vaping</option>
+                <option value="20">Windshield Wiper Fluid</option>
+                <option value="21">Other</option>
+            </select></td></tr>
                 <tr><td>Start Date</td><td><input id="Addiction_StartDate" type="text" class="isDatePicker isSmallField"></td></tr>
                 <tr><td>End Date</td><td><input id="Addiction_EndDate" type="text" class="isDatePicker isSmallField"></td></tr>
 
@@ -1134,7 +1128,7 @@
                             <option value=""></option>
                             <option value="1">Full-Time</option>
                             <option value="2">Part-Time</option>
-                            <option value="3">Either</option>
+                            <option value="3">Casual</option>
                         </select>
                     </td>
                 </tr>
